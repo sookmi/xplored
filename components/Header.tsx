@@ -1,0 +1,65 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const navigation = [
+  { name: 'All Resources', href: '/' },
+  { name: 'Design System', href: '/category/design-system' },
+  { name: 'References', href: '/category/references' },
+  { name: 'Platforms', href: '/category/platforms' },
+  { name: 'About', href: '/about' },
+];
+
+export default function Header() {
+  const pathname = usePathname();
+
+  return (
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-xl font-bold text-gray-900">XploreD</span>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-1">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href ||
+                (item.href !== '/' && pathname.startsWith(item.href));
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'bg-gray-900 text-white'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          <button className="md:hidden p-2 rounded-lg hover:bg-gray-100">
+            <svg
+              className="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+  );
+}
