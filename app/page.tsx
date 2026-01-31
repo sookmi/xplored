@@ -25,11 +25,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* 배포 테스트 배너 - 확인 후 삭제하세요! */}
-      <div className="bg-green-500 text-white text-center py-3 px-4 rounded-lg mb-6 font-bold text-lg">
-        🚀 GitHub → Vercel 자동 배포 테스트 성공! 🎉
-      </div>
-
       <section className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Design Resources
