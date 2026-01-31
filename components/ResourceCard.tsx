@@ -11,9 +11,9 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
       href={resource.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-200"
+      className="group block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200"
     >
-      <div className="aspect-[16/10] relative bg-gray-100 overflow-hidden">
+      <div className="aspect-[16/10] relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
         {resource.thumbnail ? (
           <Image
             src={resource.thumbnail}
@@ -23,8 +23,8 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-            <span className="text-4xl font-bold text-gray-300">
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+            <span className="text-4xl font-bold text-gray-300 dark:text-gray-700">
               {resource.title.charAt(0).toUpperCase()}
             </span>
           </div>
@@ -33,11 +33,11 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
 
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-1">
+          <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-1">
             {resource.title}
           </h3>
           <svg
-            className="w-4 h-4 text-gray-400 group-hover:text-primary-600 flex-shrink-0 mt-1 transition-colors"
+            className="w-4 h-4 text-gray-400 dark:text-gray-600 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex-shrink-0 mt-1 transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -52,19 +52,19 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
         </div>
 
         <div className="mt-3 flex items-center gap-2 flex-wrap">
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
             {resource.category}
           </span>
           {resource.tags.slice(0, 2).map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700"
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300"
             >
               {tag}
             </span>
           ))}
           {resource.tags.length > 2 && (
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-500 dark:text-gray-500">
               +{resource.tags.length - 2}
             </span>
           )}

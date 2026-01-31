@@ -26,10 +26,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <section className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Design Resources
         </h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
           Curated collection of design systems, references, and platforms.
         </p>
 
@@ -43,8 +43,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
       {searchQuery && (
         <div className="mb-6">
-          <p className="text-sm text-gray-600">
-            Search results for: <span className="font-medium">&quot;{searchQuery}&quot;</span>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Search results for: <span className="font-medium text-gray-900 dark:text-white">&quot;{searchQuery}&quot;</span>
           </p>
         </div>
       )}
