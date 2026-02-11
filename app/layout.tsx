@@ -8,15 +8,24 @@ import { Providers } from '@/components/Providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'XploreD - Curated Design Resources',
-  description: 'Discover curated design resources including design systems, references, and platforms for designers and developers.',
-  keywords: ['design', 'resources', 'design system', 'references', 'platforms', 'UI', 'UX'],
+  title: 'XploreD - 디자인 리소스 큐레이션',
+  description: '디자인 시스템, 레퍼런스, 플랫폼 등 디자이너와 개발자를 위한 엄선된 디자인 리소스를 발견하세요.',
+  keywords: ['디자인', '리소스', '디자인 시스템', '레퍼런스', '플랫폼', 'UI', 'UX', '웹디자인', '프론트엔드'],
   openGraph: {
-    title: 'XploreD - Curated Design Resources',
-    description: 'Discover curated design resources including design systems, references, and platforms.',
+    title: 'XploreD - 디자인 리소스 큐레이션',
+    description: '디자인 시스템, 레퍼런스, 플랫폼 등 디자이너와 개발자를 위한 엄선된 디자인 리소스.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'ko_KR',
+    siteName: 'XploreD',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'XploreD - 디자인 리소스 큐레이션',
+    description: '디자이너와 개발자를 위한 엄선된 디자인 리소스 모음.',
+  },
+  other: {
+    'naver-site-verification': 'verification_token', // Placeholder for actual token
+  }
 };
 
 export default function RootLayout({
@@ -25,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ko" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased`}>
         <Providers>
           <div className="min-h-screen flex flex-col">

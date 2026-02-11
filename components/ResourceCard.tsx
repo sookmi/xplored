@@ -13,7 +13,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
       rel="noopener noreferrer"
       className="group block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200"
     >
-      <div className="aspect-[16/10] relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
+      <div className="aspect-video relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
         {resource.thumbnail ? (
           <Image
             src={resource.thumbnail}

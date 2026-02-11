@@ -23,7 +23,8 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-1">
             {navigation.map((item) => {
               const isActive = pathname === item.href ||
-                (item.href !== '/' && pathname.startsWith(item.href));
+                (item.href !== '/' && pathname.startsWith(item.href)) ||
+                (item.href === '/' && pathname.startsWith('/category'));
 
               return (
                 <Link
