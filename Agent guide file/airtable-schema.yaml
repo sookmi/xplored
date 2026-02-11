@@ -1,0 +1,75 @@
+database:
+  name: XploreD_Main
+
+tables:
+
+  - table_name: Resources
+    description: >
+      Core dataset for XploreD card-based UI rendering.
+      Each record represents a curated tool, platform, or production resource.
+
+    fields:
+
+      - name: title
+        type: text
+        required: true
+        description: Official service or tool name.
+
+      - name: url
+        type: url
+        required: true
+        description: Primary landing page URL.
+
+      - name: category
+        type: single_select
+        options:
+          - AI
+          - Design System
+          - References
+          - Platforms
+          - Assets
+          - Production
+        required: true
+        description: Primary information architecture category.
+
+      - name: tags
+        type: multi_select
+        examples:
+          - Icon
+          - Image
+          - Font
+          - Brand
+          - Printing
+          - Domain
+          - Analysis
+          - Text
+        description: Functional classification layer.
+
+      - name: source_type
+        type: single_select
+        options:
+          - Website
+          - Figma
+          - Chrome Plugin
+        description: Source origin type.
+
+      - name: status
+        type: single_select
+        options:
+          - Draft
+          - Published
+          - Archived
+        default: Published
+        description: Content lifecycle state.
+
+      - name: thumbnail
+        type: attachment
+        description: Card preview image for dashboard UI.
+
+      - name: created_at
+        type: date
+        auto_generated: true
+
+      - name: updated_at
+        type: date
+        auto_generated: true
