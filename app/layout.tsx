@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     siteName: 'XploreD (엑스플로디)',
-
   },
   twitter: {
     card: 'summary_large_image',
