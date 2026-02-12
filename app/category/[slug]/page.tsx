@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           Resources
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 엄선된 리소스
+          아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 실무 리소스
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
