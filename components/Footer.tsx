@@ -10,7 +10,7 @@ export default function Footer() {
               XploreD
             </Link>
             <p className="mt-2 text-sm text-gray-600">
-              Curated design resources for designers and developers.
+              창업을 꿈꾸는 디자이너를 위한 리소스 키트
             </p>
           </div>
 
