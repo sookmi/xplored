@@ -5,6 +5,13 @@ interface ResourceCardProps {
   resource: Resource;
 }
 
+// Helper function to remove [bracket] patterns from tags
+function stripBrackets(tag: string): string {
+  // Match pattern like "[AI] Text" and return only "Text"
+  const match = tag.match(/\[.*?\]\s*(.*)/);
+  return match ? match[1].trim() : tag;
+}
+
 export default function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <a
@@ -55,6 +62,24 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
           </svg>
         </div>
 
+
+        {/* Tag Line */}
+        {resource.tag_line && (
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+            {resource.tag_line}
+          </p>
+        )}
+
+        {/* Explore Tip - Hidden for now */}
+        {/* {resource.explore_tip && (
+          <div className="mt-2 p-2 bg-primary-50 dark:bg-primary-900/20 border border-primary-100 dark:border-primary-800/30 rounded-lg">
+            <p className="text-xs text-primary-700 dark:text-primary-300">
+              💡 {resource.explore_tip}
+            </p>
+          </div>
+        )} */}
+
+
         <div className="mt-3 flex items-center gap-2 flex-wrap">
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
             {resource.category}
@@ -64,7 +89,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
               key={tag}
               className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
             >
-              {tag}
+              {stripBrackets(tag)}
             </span>
           ))}
           {resource.tags.length > 2 && (

@@ -17,6 +17,8 @@ interface AirtableRecord {
     source_type?: string;
     status?: string;
     thumbnail?: AirtableAttachment[];
+    tag_line?: string;
+    explore_tip?: string;
     created_at?: string;
     updated_at?: string;
   };
@@ -33,6 +35,8 @@ function mapRecordToResource(record: AirtableRecord): Resource {
     sourceType: fields.source_type || '',
     status: (fields.status as 'Published' | 'Draft') || 'Draft',
     thumbnail: fields.thumbnail?.[0]?.url || null,
+    tag_line: fields.tag_line,
+    explore_tip: fields.explore_tip,
     createdAt: fields.created_at || '',
     updatedAt: fields.updated_at || '',
   };

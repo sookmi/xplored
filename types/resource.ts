@@ -7,6 +7,8 @@ export interface Resource {
   sourceType: string;
   status: 'Published' | 'Draft';
   thumbnail: string | null;
+  tag_line?: string;
+  explore_tip?: string;
   createdAt: string;
   updatedAt: string;
 }
