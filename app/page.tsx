@@ -30,7 +30,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           Resources
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
-          아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 실무 리소스
+          아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 리소스 키트
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
