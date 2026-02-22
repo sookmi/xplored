@@ -82,7 +82,15 @@ export async function getCategories(): Promise<string[]> {
     }
   });
 
-  return Array.from(categories).sort();
+  const CATEGORY_ORDER = ['References', 'AI', 'Design System', 'Assets', 'Platforms', 'Production'];
+  return Array.from(categories).sort((a, b) => {
+    const indexA = CATEGORY_ORDER.indexOf(a);
+    const indexB = CATEGORY_ORDER.indexOf(b);
+    if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+    return indexA - indexB;
+  });
 }
 
 export async function searchResources(query: string): Promise<Resource[]> {
