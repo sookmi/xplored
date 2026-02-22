@@ -84,7 +84,7 @@ export default function AboutPage() {
           href="mailto:xploredx@gmail.com?subject=XploreD 의견 보내기"
           className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium hover:opacity-80 transition-opacity"
         >
-          ✉️ 의견 보내기
+          의견 보내기
         </a>
       </div>
     </div>
