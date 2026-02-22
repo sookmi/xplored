@@ -47,6 +47,10 @@ export default function AboutPage() {
         <ul className="grid grid-cols-1 gap-y-4 mb-10">
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
+            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">References</strong>단순 영감을 넘어 논리와 구조가 담긴 레퍼런스</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary-600 mr-2 font-bold">•</span>
             <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">AI</strong>기획과 반복 업무를 도와주는 지능형 도구</span>
           </li>
           <li className="flex items-start">
@@ -55,15 +59,11 @@ export default function AboutPage() {
           </li>
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">References</strong>단순 영감을 넘어 논리와 구조가 담긴 레퍼런스</span>
+            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Assets</strong>즉시 투입 가능한 고품질 소스와 에셋</span>
           </li>
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
             <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Platforms</strong>협업과 생산성을 극대화하는 실무 환경</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Assets</strong>즉시 투입 가능한 고품질 소스와 에셋</span>
           </li>
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
@@ -80,6 +80,12 @@ export default function AboutPage() {
           제안하고 싶은 리소스가 있거나 시스템 오류를 발견하셨나요?
           당신의 피드백은 엑스플로디라는 항로를 더 정교하게 만듭니다.
         </p>
+        <a
+          href="mailto:xploredx@gmail.com?subject=XploreD 의견 보내기"
+          className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium hover:opacity-80 transition-opacity"
+        >
+          ✉️ 의견 보내기
+        </a>
       </div>
     </div>
   );
