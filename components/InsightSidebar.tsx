@@ -88,7 +88,7 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
 
             {/* Sidebar */}
             <div
-                className={`fixed top-0 right-0 h-full w-full max-w-[520px] bg-white dark:bg-gray-950 z-50 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${insight ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 h-full w-full max-w-[560px] bg-white dark:bg-gray-950 z-50 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${insight ? 'translate-x-0' : 'translate-x-full'
                     }`}
             >
                 {insight && (
