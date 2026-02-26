@@ -74,6 +74,7 @@ function mapInsightRecordToResource(record: InsightAirtableRecord): Resource {
     tag_line: fields.tag_line,
     explore_tip: fields.explored_tip,
     author: fields.author,
+    summary: fields.summary,
     createdAt: fields.created_at || '',
     updatedAt: fields.updated_at || '',
   };

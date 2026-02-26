@@ -1,12 +1,12 @@
 import { getInsights } from '@/lib/airtable';
-import InsightGrid from '@/components/InsightGrid';
+import InsightPageClient from '@/components/InsightPageClient';
 import type { Metadata } from 'next';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
     title: 'Insight - XploreD',
-    description: '아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 인사이트 모음',
+    description: '팔리는 디자인의 밑그림, 디자이너를 위한 지식 저장소',
 };
 
 export default async function InsightPage() {
@@ -19,11 +19,11 @@ export default async function InsightPage() {
                     Insight
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                    팔리는 디자인의 밑그림, 창업가형 디자이너를 위한 지식 저장소
+                    팔리는 디자인의 밑그림, 디자이너를 위한 지식 저장소
                 </p>
             </section>
 
-            <InsightGrid resources={insights} />
+            <InsightPageClient insights={insights} />
         </div>
     );
 }

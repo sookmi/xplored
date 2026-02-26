@@ -3,9 +3,10 @@ import InsightCard from './InsightCard';
 
 interface InsightGridProps {
     resources: Resource[];
+    onSelect?: (resource: Resource) => void;
 }
 
-export default function InsightGrid({ resources }: InsightGridProps) {
+export default function InsightGrid({ resources, onSelect }: InsightGridProps) {
     if (resources.length === 0) {
         return (
             <div className="text-center py-16">
@@ -35,7 +36,11 @@ export default function InsightGrid({ resources }: InsightGridProps) {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource) => (
-                <InsightCard key={resource.id} resource={resource} />
+                <InsightCard
+                    key={resource.id}
+                    resource={resource}
+                    onSelect={() => onSelect?.(resource)}
+                />
             ))}
         </div>
     );

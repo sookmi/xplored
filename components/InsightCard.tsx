@@ -3,21 +3,14 @@ import { Resource } from '@/types/resource';
 
 interface InsightCardProps {
     resource: Resource;
+    onSelect: () => void;
 }
 
-// Helper function to remove [bracket] patterns from tags
-function stripBrackets(tag: string): string {
-    const match = tag.match(/\[.*?\]\s*(.*)/);
-    return match ? match[1].trim() : tag;
-}
-
-export default function InsightCard({ resource }: InsightCardProps) {
+export default function InsightCard({ resource, onSelect }: InsightCardProps) {
     return (
-        <a
-            href={resource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200"
+        <div
+            onClick={onSelect}
+            className="group cursor-pointer bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200"
         >
             <div className="aspect-video relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
                 {resource.thumbnail ? (
@@ -49,19 +42,26 @@ export default function InsightCard({ resource }: InsightCardProps) {
                     <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-1">
                         {resource.title}
                     </h3>
-                    <svg
-                        className="w-4 h-4 text-gray-400 dark:text-gray-600 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex-shrink-0 mt-1 transition-colors"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                    </svg>
+                    {/* 외부 링크: 별도 클릭 이벤트 (사이드바 열기 방지) */}
+                    {resource.url && (
+                        <a
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex-shrink-0 mt-0.5 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                            aria-label="외부 링크"
+                        >
+                            <svg
+                                className="w-4 h-4 text-gray-400 dark:text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    )}
                 </div>
 
                 {resource.tag_line && (
@@ -76,7 +76,7 @@ export default function InsightCard({ resource }: InsightCardProps) {
                             key={tag}
                             className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
                         >
-                            {stripBrackets(tag)}
+                            {tag}
                         </span>
                     ))}
                     {resource.tags.length > 2 && (
@@ -86,6 +86,6 @@ export default function InsightCard({ resource }: InsightCardProps) {
                     )}
                 </div>
             </div>
-        </a>
+        </div>
     );
 }

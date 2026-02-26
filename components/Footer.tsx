@@ -21,7 +21,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               <li>
                 <Link
-                  href="/category/design-system"
+                  href="/resource/design-system"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                 >
                   Design System
@@ -29,7 +29,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/category/references"
+                  href="/resource/references"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   References
@@ -37,7 +37,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/category/platforms"
+                  href="/resource/platforms"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   Platforms

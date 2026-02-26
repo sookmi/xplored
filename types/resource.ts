@@ -10,6 +10,7 @@ export interface Resource {
   tag_line?: string;
   explore_tip?: string;
   author?: string;
+  summary?: string;
   createdAt: string;
   updatedAt: string;
 }

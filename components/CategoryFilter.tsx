@@ -28,7 +28,7 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
       </Link>
       {categories.map((category) => {
         const slug = getCategorySlug(category);
-        const href = `/category/${slug}`;
+        const href = `/resource/${slug}`;
         // Handle potential trailing slashes in pathname or consistent matching
         const isActive = pathname === href || pathname === `${href}/`;
 
