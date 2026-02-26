@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About - XploreD',
+  title: 'About',
   description: 'The Designer\'s Survival Kit. 아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 엄선된 실무 리소스.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">About XploreD</h1>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">About</h1>
 
       <div className="prose prose-gray max-w-none">
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
@@ -37,35 +37,6 @@ export default function AboutPage() {
           디자이너가 오직 &apos;만드는 일&apos;에만 집중할 수 있는 인프라를 제공하는 것입니다.
         </p>
 
-        <hr className="my-10 border-gray-200 dark:border-gray-700" />
-
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-6">
-          The 5 Fairway
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">창업가형 디자이너를 위한 5가지 핵심 카테고리입니다.</p>
-
-        <ul className="grid grid-cols-1 gap-y-4 mb-10">
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">References</strong>단순 영감을 넘어 논리와 구조가 담긴 레퍼런스</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">AI</strong>기획과 반복 업무를 도와주는 지능형 도구</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Assets</strong>즉시 투입 가능한 고품질 소스와 에셋</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Platforms</strong>협업과 생산성을 극대화하는 실무 환경</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Production</strong>한국 실무에 특화된 인쇄, 특허, 제작 인프라</span>
-          </li>
-        </ul>
 
         <hr className="my-10 border-gray-200 dark:border-gray-700" />
 
