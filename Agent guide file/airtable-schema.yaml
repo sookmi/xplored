@@ -1,75 +1,47 @@
-database:
-  name: XploreD_Main
+# Database Schema: XploreD_Main
 
-tables:
+## Table: Resources
+**Description**: 
+Core dataset for XploreD card-based UI rendering. 
+Each record represents a curated tool, platform, or production resource tailored for 'Entrepreneurial Designers'.
 
-  - table_name: Resources
-    description: >
-      Core dataset for XploreD card-based UI rendering.
-      Each record represents a curated tool, platform, or production resource.
+### Fields
 
-    fields:
+| Name | Type | Required | Description |
+| :--- | :--- | :---: | :--- |
+| **title** | text | Yes | Official service or tool name (KR/EN). |
+| **url** | url | Yes | Primary landing page URL. |
+| **tagline** | text | Yes | Core value summary (approx. 15 chars). |
+| **category** | single_select | Yes | Primary IA category (Ordered by Service Workflow). |
+| **tags** | multi_select | Yes | Functional classification layer. |
+| **explored_tip** | long_text | Yes | Curated tip by 'Senior Designer' (max 2 lines). |
+| **source_type** | single_select | No | Website, Figma, Chrome Plugin, API, etc. |
+| **status** | single_select | Yes | Draft, Published, Archived (Default: Published). |
+| **thumbnail** | attachment | No | Card preview image for dashboard UI. |
+| **created_at** | date | Yes | Auto-generated timestamp. |
+| **updated_at** | date | Yes | Last modification timestamp. |
 
-      - name: title
-        type: text
-        required: true
-        description: Official service or tool name.
+---
 
-      - name: url
-        type: url
-        required: true
-        description: Primary landing page URL.
+### Field Options Detail
 
-      - name: category
-        type: single_select
-        options:
-          - AI
-          - Design System
-          - References
-          - Platforms
-          - Assets
-          - Production
-        required: true
-        description: Primary information architecture category.
+#### 1. Category (Ordered by User Journey)
+1. **References**: Inspiration and strategic analysis.
+2. **AI & Automation**: AI-powered efficiency tools.
+3. **Design System**: Blueprints and UI frameworks.
+4. **Assets**: Raw materials like 3D, mockups, and illustrations.
+5. **Platforms**: Collaboration and service management.
+6. **Production**: Final output, printing, and logistics.
 
-      - name: tags
-        type: multi_select
-        examples:
-          - Icon
-          - Image
-          - Font
-          - Brand
-          - Printing
-          - Domain
-          - Analysis
-          - Text
-        description: Functional classification layer.
+#### 2. Tags (By Category)
+- **AI & Automation**: `image`, `chat AI`, `music`, `code`, `video`, `etc`
+- **Design System**: `blueprint`, `kit`, `code`
+- **References**: `analysis`, `color`, `font`, `icon`, `screen`, `image`, `brand`, `domain`
+- **Platforms**: `no-code`, `collaboration`, `management`
+- **Assets**: `3d`, `mockup`, `illustration`
+- **Production**: `print`, `infra`, `logistics`
 
-      - name: source_type
-        type: single_select
-        options:
-          - Website
-          - Figma
-          - Chrome Plugin
-        description: Source origin type.
-
-      - name: status
-        type: single_select
-        options:
-          - Draft
-          - Published
-          - Archived
-        default: Published
-        description: Content lifecycle state.
-
-      - name: thumbnail
-        type: attachment
-        description: Card preview image for dashboard UI.
-
-      - name: created_at
-        type: date
-        auto_generated: true
-
-      - name: updated_at
-        type: date
-        auto_generated: true
+#### 3. Status
+- `Draft`
+- `Published`
+- `Archived`
