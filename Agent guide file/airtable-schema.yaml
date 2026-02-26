@@ -34,7 +34,7 @@ Each record represents a curated tool, platform, or production resource tailored
 
 #### 2. Tags (By Category)
 - **References**: `analysis`, `color`, `font`, `icon`, `screen`, `image`, `brand`, `domain`, `system`
-- **AI**: `image`, `chat AI`, `music`, `code`, `video`, `etc`
+- **AI**: `ux/ui`,`image`, `chat AI`, `music`, `code`, `video`, `etc`
 - **Assets**: `3d`, `mockup`, `illustration`
 - **Platforms**: `no-code`, `collaboration`, `management`
 - **Production**: `print`, `infra`, `logistics`
