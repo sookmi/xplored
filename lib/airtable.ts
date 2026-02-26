@@ -6,6 +6,7 @@ const base = new Airtable({
 }).base(process.env.AIRTABLE_BASE_ID!);
 
 const TABLE_NAME = 'Resource';
+const INSIGHT_TABLE_NAME = 'Insight';
 
 interface AirtableRecord {
   id: string;
@@ -136,4 +137,15 @@ export async function getAllTags(): Promise<string[]> {
   });
 
   return Array.from(tags).sort();
+}
+
+export async function getInsights(): Promise<Resource[]> {
+  const records = await base(INSIGHT_TABLE_NAME)
+    .select({
+      filterByFormula: '{status} = "Published"',
+      sort: [{ field: 'created_at', direction: 'desc' }],
+    })
+    .all();
+
+  return records.map((record) => mapRecordToResource(record as unknown as AirtableRecord));
 }
