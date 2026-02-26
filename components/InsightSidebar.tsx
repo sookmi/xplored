@@ -94,7 +94,7 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
                 {insight && (
                     <>
                         {/* 상단: 제목 + 닫기 버튼 */}
-                        <div className="flex items-start justify-between gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800 flex-shrink-0">
+                        <div className="flex items-start justify-between gap-3 px-6 py-6 border-b border-gray-100 dark:border-gray-800 flex-shrink-0">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white leading-snug">
                                 {insight.title}
                             </h2>
@@ -112,7 +112,7 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
                         {/* 컨텐츠 스크롤 영역 */}
                         <div className="flex-1 overflow-y-auto">
 
-                            <div className="px-5 py-5">
+                            <div className="px-6 py-6">
                                 {/* 메타 정보 그룹: 저자 + 태그라인 + 태그 */}
                                 <div className="mb-5 space-y-3">
                                     {insight.author && (
@@ -163,7 +163,7 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
 
                         {/* 하단: 외부 링크 버튼 */}
                         {insight.url && (
-                            <div className="px-5 py-4 border-t border-gray-100 dark:border-gray-800 flex-shrink-0">
+                            <div className="px-6 py-6 border-t border-gray-100 dark:border-gray-800 flex-shrink-0">
                                 <a
                                     href={insight.url}
                                     target="_blank"
