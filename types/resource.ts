@@ -9,6 +9,7 @@ export interface Resource {
   thumbnail: string | null;
   tag_line?: string;
   explore_tip?: string;
+  author?: string;
   createdAt: string;
   updatedAt: string;
 }

@@ -1,5 +1,5 @@
 import { getInsights } from '@/lib/airtable';
-import ResourceGrid from '@/components/ResourceGrid';
+import InsightGrid from '@/components/InsightGrid';
 import type { Metadata } from 'next';
 
 export const revalidate = 3600;
@@ -19,11 +19,11 @@ export default async function InsightPage() {
                     Insight
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                    아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 리소스 키트
+                    팔리는 디자인의 밑그림, 창업가형 디자이너를 위한 지식 저장소
                 </p>
             </section>
 
-            <ResourceGrid resources={insights} />
+            <InsightGrid resources={insights} />
         </div>
     );
 }

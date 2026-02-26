@@ -25,6 +25,23 @@ interface AirtableRecord {
   };
 }
 
+interface InsightAirtableRecord {
+  id: string;
+  fields: {
+    title?: string;
+    url?: string;
+    tags?: string[];
+    status?: string;
+    thumbnail?: AirtableAttachment[];
+    tag_line?: string;
+    explored_tip?: string;
+    summary?: string;
+    author?: string;
+    created_at?: string;
+    updated_at?: string;
+  };
+}
+
 function mapRecordToResource(record: AirtableRecord): Resource {
   const fields = record.fields;
   return {
@@ -43,6 +60,25 @@ function mapRecordToResource(record: AirtableRecord): Resource {
   };
 }
 
+function mapInsightRecordToResource(record: InsightAirtableRecord): Resource {
+  const fields = record.fields;
+  return {
+    id: record.id,
+    title: fields.title || '',
+    url: fields.url || '',
+    category: '',
+    tags: fields.tags || [],
+    sourceType: '',
+    status: (fields.status as 'Published' | 'Draft') || 'Draft',
+    thumbnail: fields.thumbnail?.[0]?.url || null,
+    tag_line: fields.tag_line,
+    explore_tip: fields.explored_tip,
+    author: fields.author,
+    createdAt: fields.created_at || '',
+    updatedAt: fields.updated_at || '',
+  };
+}
+
 export async function getResources(category?: string): Promise<Resource[]> {
   const filterFormula = category && category !== 'All'
     ? `AND({status} = "Published", {category} = "${category}")`
@@ -56,6 +92,17 @@ export async function getResources(category?: string): Promise<Resource[]> {
     .all();
 
   return records.map((record) => mapRecordToResource(record as unknown as AirtableRecord));
+}
+
+export async function getInsights(): Promise<Resource[]> {
+  const records = await base(INSIGHT_TABLE_NAME)
+    .select({
+      filterByFormula: '{status} = "Published"',
+      sort: [{ field: 'created_at', direction: 'desc' }],
+    })
+    .all();
+
+  return records.map((record) => mapInsightRecordToResource(record as unknown as InsightAirtableRecord));
 }
 
 export async function getResourceById(id: string): Promise<Resource | null> {
@@ -139,13 +186,3 @@ export async function getAllTags(): Promise<string[]> {
   return Array.from(tags).sort();
 }
 
-export async function getInsights(): Promise<Resource[]> {
-  const records = await base(INSIGHT_TABLE_NAME)
-    .select({
-      filterByFormula: '{status} = "Published"',
-      sort: [{ field: 'created_at', direction: 'desc' }],
-    })
-    .all();
-
-  return records.map((record) => mapRecordToResource(record as unknown as AirtableRecord));
-}
