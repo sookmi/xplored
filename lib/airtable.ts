@@ -82,7 +82,7 @@ export async function getCategories(): Promise<string[]> {
     }
   });
 
-  const CATEGORY_ORDER = ['References', 'AI', 'Design System', 'Assets', 'Platforms', 'Production'];
+  const CATEGORY_ORDER = ['References', 'AI', 'Assets', 'Platforms', 'Production'];
   return Array.from(categories).sort((a, b) => {
     const indexA = CATEGORY_ORDER.indexOf(a);
     const indexB = CATEGORY_ORDER.indexOf(b);

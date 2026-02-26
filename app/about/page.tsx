@@ -40,9 +40,9 @@ export default function AboutPage() {
         <hr className="my-10 border-gray-200 dark:border-gray-700" />
 
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-6">
-          The 6 Fairway
+          The 5 Fairway
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">창업가형 디자이너를 위한 6가지 핵심 카테고리입니다.</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-6">창업가형 디자이너를 위한 5가지 핵심 카테고리입니다.</p>
 
         <ul className="grid grid-cols-1 gap-y-4 mb-10">
           <li className="flex items-start">
@@ -52,10 +52,6 @@ export default function AboutPage() {
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
             <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">AI</strong>기획과 반복 업무를 도와주는 지능형 도구</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary-600 mr-2 font-bold">•</span>
-            <span className="text-gray-700 dark:text-gray-300"><strong className="text-gray-900 dark:text-white mr-2">Design System</strong>글로벌 기업의 디자인 시스템과 컴포넌트 라이브러리</span>
           </li>
           <li className="flex items-start">
             <span className="text-primary-600 mr-2 font-bold">•</span>
