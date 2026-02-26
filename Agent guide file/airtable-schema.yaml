@@ -12,7 +12,7 @@ Each record represents a curated tool, platform, or production resource tailored
 | **title** | text | Yes | Official service or tool name (KR/EN). |
 | **url** | url | Yes | Primary landing page URL. |
 | **tagline** | text | Yes | Core value summary (approx. 15 chars). |
-| **category** | single_select | Yes | Primary IA category (Ordered by Service Workflow). |
+| **category** | single_select | Yes | Primary IA category (Ordered by User Journey). |
 | **tags** | multi_select | Yes | Functional classification layer. |
 | **explored_tip** | long_text | Yes | Curated tip by 'Senior Designer' (max 2 lines). |
 | **source_type** | single_select | No | Website, Figma, Chrome Plugin, API, etc. |
@@ -25,20 +25,18 @@ Each record represents a curated tool, platform, or production resource tailored
 
 ### Field Options Detail
 
-#### 1. Category (Ordered by User Journey)
-1. **References**: Inspiration and strategic analysis.
-2. **AI**: AI-powered efficiency tools.
-3. **Design System**: Blueprints and UI frameworks.
-4. **Assets**: Raw materials like 3D, mockups, and illustrations.
-5. **Platforms**: Collaboration and service management.
-6. **Production**: Final output, printing, and logistics.
+#### 1. Category (5 Main Categories)
+1. **References**: Inspiration, strategic analysis, and structural blueprints.
+2. **AI**: AI-powered creation and logic automation.
+3. **Assets**: Raw materials like 3D, mockups, and illustrations.
+4. **Platforms**: Service building, collaboration, and management.
+5. **Production**: Final output, printing, and logistics.
 
 #### 2. Tags (By Category)
-- **AI & Automation**: `image`, `chat AI`, `music`, `code`, `video`, `etc`
-- **Design System**: `blueprint`, `kit`, `code`
-- **References**: `analysis`, `color`, `font`, `icon`, `screen`, `image`, `brand`, `domain`
-- **Platforms**: `no-code`, `collaboration`, `management`
+- **References**: `analysis`, `color`, `font`, `icon`, `screen`, `image`, `brand`, `domain`, `system`
+- **AI**: `image`, `chat AI`, `music`, `code`, `video`, `etc`
 - **Assets**: `3d`, `mockup`, `illustration`
+- **Platforms**: `no-code`, `collaboration`, `management`
 - **Production**: `print`, `infra`, `logistics`
 
 #### 3. Status
