@@ -1,7 +1,19 @@
 import { MetadataRoute } from 'next';
+import { getCategories } from '@/lib/airtable';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://xplored.design'; // Replace with your actual domain
+    const categories = await getCategories();
+
+    const categoryUrls = categories.map((category) => {
+        const slug = category.toLowerCase().replace(/\s+/g, '-');
+        return {
+            url: `${baseUrl}/resource/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        };
+    });
 
     return [
         {
@@ -17,10 +29,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/resources`,
+            url: `${baseUrl}/insight`,
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.9,
         },
+        ...categoryUrls,
     ];
 }

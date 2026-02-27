@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div>
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
               XploreD
@@ -15,46 +15,27 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
-              Categories
-            </h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="flex flex-wrap gap-6">
               <li>
                 <Link
-                  href="/resource/design-system"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  href="/"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
-                  Design System
+                  Resources
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/resource/references"
-                  className="text-sm text-gray-600 hover:text-gray-900"
+                  href="/insight"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
-                  References
+                  Insight
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/resource/platforms"
-                  className="text-sm text-gray-600 hover:text-gray-900"
-                >
-                  Platforms
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-              Links
-            </h3>
-            <ul className="mt-4 space-y-2">
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-600 hover:text-gray-900"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   About
                 </Link>
@@ -63,8 +44,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             &copy; {new Date().getFullYear()} XploreD. All rights reserved.
           </p>
         </div>
