@@ -1,0 +1,382 @@
+{
+  "space": {
+    "space20": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 20,
+      "$description": "Spacing value for 20 (number)"
+    },
+    "space16": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 16,
+      "$description": "Spacing value for 16 (number)"
+    },
+    "space4": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 4,
+      "$description": "Spacing value for 4 (number)"
+    },
+    "space64": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 64,
+      "$description": "Spacing value for 60 (number)"
+    },
+    "space8": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 8,
+      "$description": "Spacing value for 8 (number)"
+    },
+    "space72": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 72,
+      "$description": "Spacing value for 72 (number)"
+    },
+    "space48": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 48,
+      "$description": "Spacing value for 48 (number)"
+    },
+    "space14": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 14,
+      "$description": "Spacing value for 14 (number)"
+    },
+    "space2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 2,
+      "$description": "Spacing value for 2 (number)"
+    },
+    "space28": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 28,
+      "$description": "Spacing value for 28 (number)"
+    },
+    "space12": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 12,
+      "$description": "Spacing value for 12 (number)"
+    },
+    "space40": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 40,
+      "$description": "Spacing value for 40 (number)"
+    },
+    "space32": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 32,
+      "$description": "Spacing value for 32 (number)"
+    },
+    "space10": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 10,
+      "$description": "Spacing value for 10 (number)"
+    },
+    "space24": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 24,
+      "$description": "Spacing value for 24 (number)"
+    },
+    "space1": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 1,
+      "$description": "Spacing value for 1 (number)"
+    },
+    "space-1": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": -1
+    },
+    "space-1 2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": -2
+    },
+    "space-1 4": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": -8
+    },
+    "space-1 3": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": -4
+    },
+    "space6": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 6,
+      "$description": "Spacing value for 4 (number)"
+    },
+    "space80": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 80,
+      "$description": "Spacing value for 72 (number)"
+    },
+    "space96": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 96,
+      "$description": "Spacing value for 72 (number)"
+    },
+    "space120": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 120,
+      "$description": "Spacing value for 72 (number)"
+    },
+    "space160": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 160,
+      "$description": "Spacing value for 72 (number)"
+    },
+    "space56": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 56,
+      "$description": "Spacing value for 48 (number)"
+    }
+  },
+  "radius": {
+    "radius48": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 48,
+      "$description": "Radius value for 48 (number)"
+    },
+    "radius-999": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 999,
+      "$description": "Radius value for full (number)"
+    },
+    "radius32": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 32,
+      "$description": "Radius value for 32 (number)"
+    },
+    "radius24": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 24,
+      "$description": "Radius value for 24 (number)"
+    },
+    "radius16": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 16,
+      "$description": "Radius value for 16 (number)"
+    },
+    "radius8": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 8,
+      "$description": "Radius value for 8 (number)"
+    },
+    "radius6": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 6,
+      "$description": "Radius value for 6 (number)"
+    },
+    "radius4": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 4,
+      "$description": "Radius value for 4 (number)"
+    },
+    "radius12": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 12,
+      "$description": "Radius value for 12 (number)"
+    },
+    "radius2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 2,
+      "$description": "Radius value for 2 (number)"
+    }
+  },
+  "stroke": {
+    "stroke1": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 1
+    },
+    "stroke2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      },
+      "$type": "number",
+      "$value": 2
+    }
+  }
+}

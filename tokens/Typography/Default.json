@@ -1,0 +1,1068 @@
+{
+  "Title": {
+    "Title-1": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Title/Title-1"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale72}",
+        "$description": "Font size for Title/Title-1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 88,
+        "$description": "Line height for Title/Title-1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.8,
+        "$description": "Letter spacing for Title/Title-1"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "Title-2": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Title/Title-2"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale64}",
+        "$description": "Font size for Title/Title-2"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 76,
+        "$description": "Line height for Title/Title-2"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.8,
+        "$description": "Letter spacing for Title/Title-2"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "Title-3": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Title/Title-3"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale56}",
+        "$description": "Font size for Title/Title-3"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 68,
+        "$description": "Line height for Title/Title-3"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.6,
+        "$description": "Letter spacing for Title/Title-3"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    }
+  },
+  "Heading": {
+    "H1": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H1"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale56}",
+        "$description": "Font size for Heading/H1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 68,
+        "$description": "Line height for Heading/H1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.5,
+        "$description": "Letter spacing for Heading/H1"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "H2": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H2"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale48}",
+        "$description": "Font size for Heading/H2"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 58,
+        "$description": "Line height for Heading/H2"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.4,
+        "$description": "Letter spacing for Heading/H2"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "H3": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H3"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale40}",
+        "$description": "Font size for Heading/H3"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 48,
+        "$description": "Line height for Heading/H3"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.3,
+        "$description": "Letter spacing for Heading/H3"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "H4": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H4"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{32}",
+        "$description": "Font size for Heading/H4"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 38,
+        "$description": "Line height for Heading/H4"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.2,
+        "$description": "Letter spacing for Heading/H4"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "H5": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H5"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale24}",
+        "$description": "Font size for Heading/H5"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 30,
+        "$description": "Line height for Heading/H5"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.15,
+        "$description": "Letter spacing for Heading/H5"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "H6": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Heading/H6"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale20}",
+        "$description": "Font size for Heading/H6"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 24,
+        "$description": "Line height for Heading/H6"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Heading/H6"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    }
+  },
+  "Label": {
+    "Label-1": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Label/Label-1"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale16}",
+        "$description": "Font size for Label/Label-1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 22,
+        "$description": "Line height for Label/Label-1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.18,
+        "$description": "Letter spacing for Label/Label-1"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "Label-2": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Label/Label-2"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale14}",
+        "$description": "Font size for Label/Label-2"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 20,
+        "$description": "Line height for Label/Label-2"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.16,
+        "$description": "Letter spacing for Label/Label-2"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      }
+    },
+    "Label-3": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Label/Label-3"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale12}",
+        "$description": "Font size for Label/Label-3"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 16,
+        "$description": "Line height for Label/Label-3"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": -0.12,
+        "$description": "Letter spacing for Label/Label-3"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "fontWeightMedium": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightMedium}"
+      }
+    }
+  },
+  "Body": {
+    "Body-1": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Body/Body-1"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale18}",
+        "$description": "Font size for Body/Body-1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 28,
+        "$description": "Line height for Body/Body-1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Body/Body-1"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      }
+    },
+    "Body-2": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Body/Body-2"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale16}",
+        "$description": "Font size for Body/Body-2"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 24,
+        "$description": "Line height for Body/Body-2"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Body/Body-2"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "lineHeightParagraph": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 28,
+        "$description": "Line height for Body/Body-2"
+      }
+    },
+    "Body-3": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Body/Body-3"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale14}",
+        "$description": "Font size for Body/Body-3"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 20,
+        "$description": "Line height for Body/Body-3"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Body/Body-3"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "lineHeightParagraph": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 25,
+        "$description": "Line height for Body/Body-2"
+      }
+    },
+    "Body-4": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Body/Body-4"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale12}",
+        "$description": "Font size for Body/Body-4"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 16,
+        "$description": "Line height for Body/Body-4"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Body/Body-4"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "lineHeightParagraph": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 22,
+        "$description": "Line height for Body/Body-2"
+      }
+    }
+  },
+  "Caption": {
+    "Caption-1": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Caption/Caption-1"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale10}",
+        "$description": "Font size for Caption/Caption-1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 12,
+        "$description": "Line height for Caption/Caption-1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Caption/Caption-1"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "fontWeightMedium": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightMedium}"
+      }
+    },
+    "Caption-2": {
+      "fontFamily": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "text",
+        "$value": "{fontFamily.familySans}",
+        "$description": "Font family for Caption/Caption-1"
+      },
+      "fontWeightSemibold": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightSemibold}"
+      },
+      "fontWeightRegular": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightRegular}"
+      },
+      "fontSize": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontScale.scale9}",
+        "$description": "Font size for Caption/Caption-1"
+      },
+      "lineHeight": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 12,
+        "$description": "Line height for Caption/Caption-1"
+      },
+      "letterSpacing": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": 0,
+        "$description": "Letter spacing for Caption/Caption-1"
+      },
+      "fontWeightMedium": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        },
+        "$type": "number",
+        "$value": "{fontWeight.weightMedium}"
+      }
+    }
+  }
+}
