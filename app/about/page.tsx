@@ -26,8 +26,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <hr className="my-10 border-gray-200 dark:border-gray-700" />
-
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">
           Our Mission: Precision & Efficiency
         </h2>

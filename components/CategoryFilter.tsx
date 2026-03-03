@@ -20,8 +20,8 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
       <Link
         href="/"
         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isAllActive
-          ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
-          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+          ? 'bg-default-black-solid text-utility-white dark:text-gray-900'
+          : 'bg-default-tertiary text-default-secondary hover:bg-default-tertiary-hover'
           }`}
       >
         All
@@ -37,8 +37,8 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
             key={category}
             href={href}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isActive
-              ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
-              : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              ? 'bg-default-black-solid text-utility-white dark:text-gray-900'
+              : 'bg-default-tertiary text-default-secondary hover:bg-default-tertiary-hover'
               }`}
           >
             {category}

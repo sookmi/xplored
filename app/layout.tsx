@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased`}>
+      <body className={`${inter.className} bg-default-primary text-default-primary antialiased`}>
         <Providers>
           <div className="min-h-screen flex flex-col">
             <Header />

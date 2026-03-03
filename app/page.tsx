@@ -26,16 +26,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <section className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1 className="text-3xl font-bold text-default-primary mb-2">
           Resources
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-default-secondary mb-6">
           아이디어부터 결과까지, 창업을 꿈꾸는 디자이너를 위한 리소스 키트
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
           <CategoryFilter categories={categories} />
-          <Suspense fallback={<div className="w-full max-w-md h-10 bg-gray-100 rounded-lg animate-pulse" />}>
+          <Suspense fallback={<div className="w-full max-w-md h-10 bg-default-tertiary rounded-lg animate-pulse" />}>
             <SearchBar />
           </Suspense>
         </div>
@@ -43,8 +43,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
       {searchQuery && (
         <div className="mb-6">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Search results for: <span className="font-medium text-gray-900 dark:text-white">&quot;{searchQuery}&quot;</span>
+          <p className="text-sm text-default-secondary">
+            Search results for: <span className="font-medium text-default-primary">&quot;{searchQuery}&quot;</span>
           </p>
         </div>
       )}
@@ -53,7 +53,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         fallback={
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="bg-gray-100 rounded-xl h-64 animate-pulse" />
+              <div key={i} className="bg-default-tertiary rounded-xl h-64 animate-pulse" />
             ))}
           </div>
         }

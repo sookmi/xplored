@@ -12,9 +12,9 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
     return (
         <div
             onClick={onSelect}
-            className="group cursor-pointer bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-200"
+            className="group cursor-pointer bg-default-primary rounded-xl border border-default-tertiary overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-brand-primary transition-all duration-200"
         >
-            <div className="aspect-video relative bg-gray-100 dark:bg-gray-800 overflow-hidden">
+            <div className="aspect-video relative bg-default-tertiary overflow-hidden">
                 {resource.thumbnail ? (
                     <Image
                         src={resource.thumbnail}
@@ -26,8 +26,8 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
                         unoptimized={true}
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                        <span className="text-4xl font-bold text-gray-300 dark:text-gray-700">
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-default-tertiary to-default-secondary">
+                        <span className="text-4xl font-bold text-utility-placeholder">
                             {resource.title.charAt(0).toUpperCase()}
                         </span>
                     </div>
@@ -36,10 +36,10 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
 
             <div className="p-4">
                 {resource.author && (
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">{resource.author}</p>
+                    <p className="text-xs text-default-secondary mb-1">{resource.author}</p>
                 )}
                 <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-1">
+                    <h3 className="font-semibold text-default-primary group-hover:text-brand-primary transition-colors line-clamp-1">
                         {resource.title}
                     </h3>
                     {/* 외부 링크: 별도 클릭 이벤트 (사이드바 열기 방지) */}
@@ -65,7 +65,7 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
                 </div>
 
                 {resource.tag_line && (
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    <p className="mt-2 text-sm text-default-secondary line-clamp-2">
                         {resource.tag_line}
                     </p>
                 )}
@@ -74,13 +74,13 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
                     {resource.tags.slice(0, 2).map((tag) => (
                         <span
                             key={tag}
-                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-default-secondary text-default-secondary"
                         >
                             {tag}
                         </span>
                     ))}
                     {resource.tags.length > 2 && (
-                        <span className="text-xs text-gray-500 dark:text-gray-500">
+                        <span className="text-xs text-utility-placeholder">
                             +{resource.tags.length - 2}
                         </span>
                     )}

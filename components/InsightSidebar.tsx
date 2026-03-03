@@ -22,7 +22,7 @@ function formatSummary(text: string): React.ReactNode[] {
             <span key={key}>
                 {parts.map((part, j) =>
                     part.startsWith('**') && part.endsWith('**')
-                        ? <strong key={j} className="font-semibold text-gray-800 dark:text-gray-100">{part.slice(2, -2)}</strong>
+                        ? <strong key={j} className="font-semibold text-default-primary">{part.slice(2, -2)}</strong>
                         : part
                 )}
             </span>
@@ -32,14 +32,14 @@ function formatSummary(text: string): React.ReactNode[] {
     lines.forEach((line, i) => {
         if (line.startsWith('### ')) {
             elements.push(
-                <h3 key={i} className="text-base font-bold text-gray-900 dark:text-white mt-4 mb-1">
+                <h3 key={i} className="text-base font-bold text-default-primary mt-4 mb-1">
                     {line.replace('### ', '')}
                 </h3>
             );
         } else if (line.startsWith('- ')) {
             const content = line.replace('- ', '');
             elements.push(
-                <li key={i} className="text-sm text-gray-600 dark:text-gray-300 ml-3 list-disc">
+                <li key={i} className="text-sm text-default-secondary ml-3 list-disc">
                     {renderBold(content, i)}
                 </li>
             );
@@ -47,7 +47,7 @@ function formatSummary(text: string): React.ReactNode[] {
             elements.push(<div key={i} className="h-1" />);
         } else {
             elements.push(
-                <p key={i} className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p key={i} className="text-sm text-default-secondary leading-relaxed">
                     {renderBold(line, i)}
                 </p>
             );
@@ -88,22 +88,22 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
 
             {/* Sidebar */}
             <div
-                className={`fixed top-0 right-0 h-full w-full max-w-[560px] bg-white dark:bg-gray-950 z-50 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${insight ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 h-full w-full max-w-[560px] bg-default-primary z-50 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${insight ? 'translate-x-0' : 'translate-x-full'
                     }`}
             >
                 {insight && (
                     <>
                         {/* 상단: 제목 + 닫기 버튼 */}
-                        <div className="flex items-start justify-between gap-3 px-6 py-6 border-b border-gray-100 dark:border-gray-800 flex-shrink-0">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white leading-snug">
+                        <div className="flex items-start justify-between gap-3 px-6 py-6 border-b border-default-tertiary flex-shrink-0">
+                            <h2 className="text-2xl font-bold text-default-primary leading-snug">
                                 {insight.title}
                             </h2>
                             <button
                                 onClick={onClose}
-                                className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex-shrink-0 mt-0.5"
+                                className="p-1.5 rounded-lg hover:bg-default-secondary-hover transition-colors flex-shrink-0 mt-0.5"
                                 aria-label="닫기"
                             >
-                                <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 text-utility-placeholder" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
@@ -117,26 +117,26 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
                                 <div className="mb-5 space-y-3">
                                     {insight.author && (
                                         <div>
-                                            <p className="text-xs text-gray-400 dark:text-gray-500 mb-0.5">저자</p>
-                                            <p className="text-sm text-gray-700 dark:text-gray-300">{insight.author}</p>
+                                            <p className="text-xs text-utility-placeholder mb-0.5">저자</p>
+                                            <p className="text-sm text-default-primary">{insight.author}</p>
                                         </div>
                                     )}
                                     {insight.tag_line && (
                                         <div>
-                                            <p className="text-xs text-gray-400 dark:text-gray-500 mb-0.5">한줄 요약</p>
-                                            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                            <p className="text-xs text-utility-placeholder mb-0.5">한줄 요약</p>
+                                            <p className="text-sm text-default-secondary leading-relaxed">
                                                 {insight.tag_line}
                                             </p>
                                         </div>
                                     )}
                                     {insight.tags.length > 0 && (
                                         <div>
-                                            <p className="text-xs text-gray-400 dark:text-gray-500 mb-1.5">태그</p>
+                                            <p className="text-xs text-utility-placeholder mb-1.5">태그</p>
                                             <div className="flex flex-wrap gap-1.5">
                                                 {insight.tags.map((tag) => (
                                                     <span
                                                         key={tag}
-                                                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                                                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-default-secondary text-default-secondary"
                                                     >
                                                         {tag}
                                                     </span>
@@ -148,7 +148,7 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
 
                                 {/* 구분선 */}
                                 {insight.summary && (
-                                    <hr className="border-gray-100 dark:border-gray-800 mb-5" />
+                                    <hr className="border-default-tertiary mb-5" />
                                 )}
 
 
@@ -163,12 +163,12 @@ export default function InsightSidebar({ insight, onClose }: InsightSidebarProps
 
                         {/* 하단: 외부 링크 버튼 */}
                         {insight.url && (
-                            <div className="px-6 py-6 border-t border-gray-100 dark:border-gray-800 flex-shrink-0">
+                            <div className="px-6 py-6 border-t border-default-tertiary flex-shrink-0">
                                 <a
                                     href={insight.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors"
+                                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-default-black-solid text-utility-white dark:text-gray-900 text-sm font-medium hover:opacity-80 transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
