@@ -1903,7 +1903,7 @@
       "$description": "Generated from Tailwind Color System"
     }
   },
-  "b&w": {
+  "bw": {
     "white": {
       "$extensions": {
         "com.figma.scopes": [

@@ -221,10 +221,10 @@ export const colors = {
     "900": "var(--rose-900)",
     "950": "var(--rose-950)"
   },
-  "b&w": {
-    "white": "var(--b&w-white)",
-    "black": "var(--b&w-black)",
-    "transparent": "var(--b&w-transparent)"
+  "bw": {
+    "white": "var(--bw-white)",
+    "black": "var(--bw-black)",
+    "transparent": "var(--bw-transparent)"
   },
   "slate": {
     "50": "var(--slate-50)",
@@ -359,44 +359,44 @@ export const colors = {
       "black-solid-hover": "var(--bg-default-black-solid-hover)"
     },
     "disabled": {
-      "disabled": "var(--bg-disabled-disabled)",
-      "disabled-alt": "var(--bg-disabled-disabled-alt)"
+      "primary": "var(--bg-disabled-primary)",
+      "secondary": "var(--bg-disabled-secondary)"
     },
     "brand": {
-      "brand-primary": "var(--bg-brand-brand-primary)",
-      "brand-primary-hover": "var(--bg-brand-brand-primary-hover)",
-      "brand-solid": "var(--bg-brand-brand-solid)",
-      "brand-solid-hover": "var(--bg-brand-brand-solid-hover)"
+      "primary": "var(--bg-brand-primary)",
+      "primary-hover": "var(--bg-brand-primary-hover)",
+      "solid": "var(--bg-brand-solid)",
+      "solid-hover": "var(--bg-brand-solid-hover)"
     },
     "error": {
-      "error-primary": "var(--bg-error-error-primary)",
-      "error-primary-hover": "var(--bg-error-error-primary-hover)",
-      "error-secondary": "var(--bg-error-error-secondary)",
-      "error-secondary-hover": "var(--bg-error-error-secondary-hover)"
+      "primary": "var(--bg-error-primary)",
+      "primary-hover": "var(--bg-error-primary-hover)",
+      "secondary": "var(--bg-error-secondary)",
+      "secondary-hover": "var(--bg-error-secondary-hover)"
     },
     "success": {
-      "success-primary": "var(--bg-success-success-primary)",
-      "success-primary-hover": "var(--bg-success-success-primary-hover)",
-      "success-secondary": "var(--bg-success-success-secondary)",
-      "success-secondary-hover": "var(--bg-success-success-secondary-hover)"
+      "primary": "var(--bg-success-primary)",
+      "primary-hover": "var(--bg-success-primary-hover)",
+      "secondary": "var(--bg-success-secondary)",
+      "secondary-hover": "var(--bg-success-secondary-hover)"
     },
     "warning": {
-      "warning-primary": "var(--bg-warning-warning-primary)",
-      "warning-primary-hover": "var(--bg-warning-warning-primary-hover)",
-      "warning-secondary": "var(--bg-warning-warning-secondary)",
-      "warning-secondary-hover": "var(--bg-warning-warning-secondary-hover)"
+      "primary": "var(--bg-warning-primary)",
+      "primary-hover": "var(--bg-warning-primary-hover)",
+      "secondary": "var(--bg-warning-secondary)",
+      "secondary-hover": "var(--bg-warning-secondary-hover)"
     },
     "info": {
-      "info-primary": "var(--bg-info-info-primary)",
-      "info-primary-hover": "var(--bg-info-info-primary-hover)",
-      "info-secondary": "var(--bg-info-info-secondary)",
-      "info-secondary-hover": "var(--bg-info-info-secondary-hover)"
+      "primary": "var(--bg-info-primary)",
+      "primary-hover": "var(--bg-info-primary-hover)",
+      "secondary": "var(--bg-info-secondary)",
+      "secondary-hover": "var(--bg-info-secondary-hover)"
     },
     "offer": {
-      "offer-primary": "var(--bg-offer-offer-primary)",
-      "offer-primary-hover": "var(--bg-offer-offer-primary-hover)",
-      "offer-secondary": "var(--bg-offer-offer-secondary)",
-      "offer-secondary-hover": "var(--bg-offer-offer-secondary-hover)"
+      "primary": "var(--bg-offer-primary)",
+      "primary-hover": "var(--bg-offer-primary-hover)",
+      "secondary": "var(--bg-offer-secondary)",
+      "secondary-hover": "var(--bg-offer-secondary-hover)"
     },
     "utility": {
       "overlay-alpha-primary": "var(--bg-utility-overlay-alpha-primary)",
@@ -415,8 +415,8 @@ export const colors = {
       "tertiary-hover": "var(--text-default-tertiary-hover)"
     },
     "disabled": {
-      "disabled": "var(--text-disabled-disabled)",
-      "disabled-alt": "var(--text-disabled-disabled-alt)"
+      "primary": "var(--text-disabled-primary)",
+      "secondary": "var(--text-disabled-secondary)"
     },
     "utility": {
       "placeholder": "var(--text-utility-placeholder)",
@@ -424,40 +424,40 @@ export const colors = {
       "on-dark-color": "var(--text-utility-on-dark-color)"
     },
     "brand": {
-      "brand-primary": "var(--text-brand-brand-primary)",
-      "brand-secondary": "var(--text-brand-brand-secondary)",
-      "brand-primary-hover": "var(--text-brand-brand-primary-hover)",
-      "brand-secondary-hover": "var(--text-brand-brand-secondary-hover)"
+      "primary": "var(--text-brand-primary)",
+      "secondary": "var(--text-brand-secondary)",
+      "primary-hover": "var(--text-brand-primary-hover)",
+      "secondary-hover": "var(--text-brand-secondary-hover)"
     },
     "error": {
-      "error-primary": "var(--text-error-error-primary)",
-      "error-secondary": "var(--text-error-error-secondary)",
-      "error-primary-hover": "var(--text-error-error-primary-hover)",
-      "error-secondary-hover": "var(--text-error-error-secondary-hover)"
+      "primary": "var(--text-error-primary)",
+      "secondary": "var(--text-error-secondary)",
+      "primary-hover": "var(--text-error-primary-hover)",
+      "secondary-hover": "var(--text-error-secondary-hover)"
     },
     "success": {
-      "success-primary": "var(--text-success-success-primary)",
-      "success-secondary": "var(--text-success-success-secondary)",
-      "success-primary-hover": "var(--text-success-success-primary-hover)",
-      "success-secondary-hover": "var(--text-success-success-secondary-hover)"
+      "primary": "var(--text-success-primary)",
+      "secondary": "var(--text-success-secondary)",
+      "primary-hover": "var(--text-success-primary-hover)",
+      "secondary-hover": "var(--text-success-secondary-hover)"
     },
     "warning": {
-      "warning-primary": "var(--text-warning-warning-primary)",
-      "warning-secondary": "var(--text-warning-warning-secondary)",
-      "warning-primary-hover": "var(--text-warning-warning-primary-hover)",
-      "warning-secondary-hover": "var(--text-warning-warning-secondary-hover)"
+      "primary": "var(--text-warning-primary)",
+      "secondary": "var(--text-warning-secondary)",
+      "primary-hover": "var(--text-warning-primary-hover)",
+      "secondary-hover": "var(--text-warning-secondary-hover)"
     },
     "info": {
-      "info-primary": "var(--text-info-info-primary)",
-      "info-secondary": "var(--text-info-info-secondary)",
-      "info-primary-hover": "var(--text-info-info-primary-hover)",
-      "info-secondary-hover": "var(--text-info-info-secondary-hover)"
+      "primary": "var(--text-info-primary)",
+      "secondary": "var(--text-info-secondary)",
+      "primary-hover": "var(--text-info-primary-hover)",
+      "secondary-hover": "var(--text-info-secondary-hover)"
     },
     "offer": {
-      "offer-primary": "var(--text-offer-offer-primary)",
-      "offer-secondary": "var(--text-offer-offer-secondary)",
-      "offer-primary-hover": "var(--text-offer-offer-primary-hover)",
-      "offer-secondary-hover": "var(--text-offer-offer-secondary-hover)"
+      "primary": "var(--text-offer-primary)",
+      "secondary": "var(--text-offer-secondary)",
+      "primary-hover": "var(--text-offer-primary-hover)",
+      "secondary-hover": "var(--text-offer-secondary-hover)"
     }
   },
   "icon": {
@@ -470,8 +470,8 @@ export const colors = {
       "tertiary-hover": "var(--icon-default-tertiary-hover)"
     },
     "disabled": {
-      "disabled": "var(--icon-disabled-disabled)",
-      "disabled-alt": "var(--icon-disabled-disabled-alt)"
+      "primary": "var(--icon-disabled-primary)",
+      "secondary": "var(--icon-disabled-secondary)"
     },
     "utility": {
       "placeholder": "var(--icon-utility-placeholder)",
@@ -479,40 +479,40 @@ export const colors = {
       "on-dark-color": "var(--icon-utility-on-dark-color)"
     },
     "brand": {
-      "brand-primary": "var(--icon-brand-brand-primary)",
-      "brand-secondary": "var(--icon-brand-brand-secondary)",
-      "brand-primary-hover": "var(--icon-brand-brand-primary-hover)",
-      "brand-secondary-hover": "var(--icon-brand-brand-secondary-hover)"
+      "primary": "var(--icon-brand-primary)",
+      "secondary": "var(--icon-brand-secondary)",
+      "primary-hover": "var(--icon-brand-primary-hover)",
+      "secondary-hover": "var(--icon-brand-secondary-hover)"
     },
     "error": {
-      "error-primary": "var(--icon-error-error-primary)",
-      "error-secondary": "var(--icon-error-error-secondary)",
-      "error-primary-hover": "var(--icon-error-error-primary-hover)",
-      "error-secondary-hover": "var(--icon-error-error-secondary-hover)"
+      "primary": "var(--icon-error-primary)",
+      "secondary": "var(--icon-error-secondary)",
+      "primary-hover": "var(--icon-error-primary-hover)",
+      "secondary-hover": "var(--icon-error-secondary-hover)"
     },
     "success": {
-      "success-primary": "var(--icon-success-success-primary)",
-      "success-secondary": "var(--icon-success-success-secondary)",
-      "success-primary-hover": "var(--icon-success-success-primary-hover)",
-      "success-secondary-hover": "var(--icon-success-success-secondary-hover)"
+      "primary": "var(--icon-success-primary)",
+      "secondary": "var(--icon-success-secondary)",
+      "primary-hover": "var(--icon-success-primary-hover)",
+      "secondary-hover": "var(--icon-success-secondary-hover)"
     },
     "warning": {
-      "warning-primary": "var(--icon-warning-warning-primary)",
-      "warning-secondary": "var(--icon-warning-warning-secondary)",
-      "warning-primary-hover": "var(--icon-warning-warning-primary-hover)",
-      "warning-secondary-hover": "var(--icon-warning-warning-secondary-hover)"
+      "primary": "var(--icon-warning-primary)",
+      "secondary": "var(--icon-warning-secondary)",
+      "primary-hover": "var(--icon-warning-primary-hover)",
+      "secondary-hover": "var(--icon-warning-secondary-hover)"
     },
     "info": {
-      "info-primary": "var(--icon-info-info-primary)",
-      "info-secondary": "var(--icon-info-info-secondary)",
-      "info-primary-hover": "var(--icon-info-info-primary-hover)",
-      "info-secondary-hover": "var(--icon-info-info-secondary-hover)"
+      "primary": "var(--icon-info-primary)",
+      "secondary": "var(--icon-info-secondary)",
+      "primary-hover": "var(--icon-info-primary-hover)",
+      "secondary-hover": "var(--icon-info-secondary-hover)"
     },
     "offer": {
-      "offer-primary": "var(--icon-offer-offer-primary)",
-      "offer-secondary": "var(--icon-offer-offer-secondary)",
-      "offer-primary-hover": "var(--icon-offer-offer-primary-hover)",
-      "offer-secondary-hover": "var(--icon-offer-offer-secondary-hover)"
+      "primary": "var(--icon-offer-primary)",
+      "secondary": "var(--icon-offer-secondary)",
+      "primary-hover": "var(--icon-offer-primary-hover)",
+      "secondary-hover": "var(--icon-offer-secondary-hover)"
     }
   },
   "border": {
@@ -523,32 +523,32 @@ export const colors = {
       "primary-solid": "var(--border-default-primary-solid)"
     },
     "disabled": {
-      "disabled": "var(--border-disabled-disabled)",
-      "disabled-alt": "var(--border-disabled-disabled-alt)"
+      "primary": "var(--border-disabled-primary)",
+      "secondary": "var(--border-disabled-secondary)"
     },
     "brand": {
-      "brand-primary": "var(--border-brand-brand-primary)",
-      "brand-secondary": "var(--border-brand-brand-secondary)"
+      "primary": "var(--border-brand-primary)",
+      "secondary": "var(--border-brand-secondary)"
     },
     "error": {
-      "error-primary": "var(--border-error-error-primary)",
-      "error-secondary": "var(--border-error-error-secondary)"
+      "primary": "var(--border-error-primary)",
+      "secondary": "var(--border-error-secondary)"
     },
     "success": {
-      "success-primary": "var(--border-success-success-primary)",
-      "success-secondary": "var(--border-success-success-secondary)"
+      "primary": "var(--border-success-primary)",
+      "secondary": "var(--border-success-secondary)"
     },
     "warning": {
-      "warning-primary": "var(--border-warning-warning-primary)",
-      "warning-secondary": "var(--border-warning-warning-secondary)"
+      "primary": "var(--border-warning-primary)",
+      "secondary": "var(--border-warning-secondary)"
     },
     "info": {
-      "info-primary": "var(--border-info-info-primary)",
-      "info-secondary": "var(--border-info-info-secondary)"
+      "primary": "var(--border-info-primary)",
+      "secondary": "var(--border-info-secondary)"
     },
     "offer": {
-      "offer-primary": "var(--border-offer-offer-primary)",
-      "offer-secondary": "var(--border-offer-offer-secondary)"
+      "primary": "var(--border-offer-primary)",
+      "secondary": "var(--border-offer-secondary)"
     }
   }
 };

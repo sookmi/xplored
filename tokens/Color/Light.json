@@ -8,7 +8,7 @@
           ]
         },
         "$type": "color",
-        "$value": "{b&w.white}",
+        "$value": "{bw.white}",
         "$description": "bg/primary semantic color"
       },
       "secondary": {
@@ -103,7 +103,7 @@
       }
     },
     "disabled": {
-      "disabled": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -113,7 +113,7 @@
         "$value": "{slate.300}",
         "$description": "bg/disabled semantic color"
       },
-      "disabled-alt": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -125,7 +125,7 @@
       }
     },
     "brand": {
-      "brand-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -135,7 +135,7 @@
         "$value": "{brand.50}",
         "$description": "bg/accent-primary semantic color"
       },
-      "brand-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -145,7 +145,7 @@
         "$value": "{brand.100}",
         "$description": "bg/accent-primary-hover semantic color"
       },
-      "brand-solid": {
+      "solid": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -155,7 +155,7 @@
         "$value": "{brand.500}",
         "$description": "bg/accent-solid semantic color"
       },
-      "brand-solid-hover": {
+      "solid-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -167,7 +167,7 @@
       }
     },
     "error": {
-      "error-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -177,7 +177,7 @@
         "$value": "{red.50}",
         "$description": "bg/error-primary semantic color"
       },
-      "error-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -187,7 +187,7 @@
         "$value": "{red.100}",
         "$description": "bg/error-primary-hover semantic color"
       },
-      "error-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -197,7 +197,7 @@
         "$value": "{red.600}",
         "$description": "bg/error-secondary semantic color"
       },
-      "error-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -209,7 +209,7 @@
       }
     },
     "success": {
-      "success-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -219,7 +219,7 @@
         "$value": "{green.100}",
         "$description": "bg/success-primary semantic color"
       },
-      "success-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -229,7 +229,7 @@
         "$value": "{green.200}",
         "$description": "bg/success-primary-hover semantic color"
       },
-      "success-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -239,7 +239,7 @@
         "$value": "{green.600}",
         "$description": "bg/success-secondary semantic color"
       },
-      "success-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -251,7 +251,7 @@
       }
     },
     "warning": {
-      "warning-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -261,7 +261,7 @@
         "$value": "{amber.100}",
         "$description": "bg/warning-primary semantic color"
       },
-      "warning-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -271,7 +271,7 @@
         "$value": "{amber.200}",
         "$description": "bg/warning-primary-hover semantic color"
       },
-      "warning-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -281,7 +281,7 @@
         "$value": "{amber.600}",
         "$description": "bg/warning-secondary semantic color"
       },
-      "warning-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -293,7 +293,7 @@
       }
     },
     "info": {
-      "info-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -303,7 +303,7 @@
         "$value": "{blue.50}",
         "$description": "bg/info-primary semantic color"
       },
-      "info-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -313,7 +313,7 @@
         "$value": "{blue.100}",
         "$description": "bg/info-primary-hover semantic color"
       },
-      "info-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -323,7 +323,7 @@
         "$value": "{blue.600}",
         "$description": "bg/info-secondary semantic color"
       },
-      "info-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -335,7 +335,7 @@
       }
     },
     "offer": {
-      "offer-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -345,7 +345,7 @@
         "$value": "{green.100}",
         "$description": "bg/offer-primary semantic color"
       },
-      "offer-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -355,7 +355,7 @@
         "$value": "{green.200}",
         "$description": "bg/offer-primary-hover semantic color"
       },
-      "offer-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -365,7 +365,7 @@
         "$value": "{green.600}",
         "$description": "bg/offer-secondary semantic color"
       },
-      "offer-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -483,7 +483,7 @@
       }
     },
     "disabled": {
-      "disabled": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -493,7 +493,7 @@
         "$value": "{slate.400}",
         "$description": "text/disabled semantic color"
       },
-      "disabled-alt": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -522,7 +522,7 @@
           ]
         },
         "$type": "color",
-        "$value": "{b&w.white}",
+        "$value": "{bw.white}",
         "$description": "text/white semantic color"
       },
       "on-dark-color": {
@@ -532,12 +532,12 @@
           ]
         },
         "$type": "color",
-        "$value": "{b&w.white}",
+        "$value": "{bw.white}",
         "$description": "text/on-dark-color semantic color"
       }
     },
     "brand": {
-      "brand-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -547,7 +547,7 @@
         "$value": "{brand.500}",
         "$description": "text/accent-primary semantic color"
       },
-      "brand-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -557,7 +557,7 @@
         "$value": "{brand.300}",
         "$description": "text/accent-secondary semantic color"
       },
-      "brand-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -567,7 +567,7 @@
         "$value": "{brand.600}",
         "$description": "text/accent-primary-hover semantic color"
       },
-      "brand-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -579,7 +579,7 @@
       }
     },
     "error": {
-      "error-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -589,7 +589,7 @@
         "$value": "{red.600}",
         "$description": "text/error-primary semantic color"
       },
-      "error-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -599,7 +599,7 @@
         "$value": "{red.400}",
         "$description": "text/error-secondary semantic color"
       },
-      "error-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -609,7 +609,7 @@
         "$value": "{red.700}",
         "$description": "text/error-primary-hover semantic color"
       },
-      "error-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -621,7 +621,7 @@
       }
     },
     "success": {
-      "success-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -631,7 +631,7 @@
         "$value": "{green.600}",
         "$description": "text/success-primary semantic color"
       },
-      "success-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -641,7 +641,7 @@
         "$value": "{green.400}",
         "$description": "text/success-secondary semantic color"
       },
-      "success-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -651,7 +651,7 @@
         "$value": "{green.700}",
         "$description": "text/success-primary-hover semantic color"
       },
-      "success-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -663,7 +663,7 @@
       }
     },
     "warning": {
-      "warning-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -673,7 +673,7 @@
         "$value": "{amber.600}",
         "$description": "text/warning-primary semantic color"
       },
-      "warning-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -683,7 +683,7 @@
         "$value": "{amber.400}",
         "$description": "text/warning-secondary semantic color"
       },
-      "warning-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -693,7 +693,7 @@
         "$value": "{amber.700}",
         "$description": "text/warning-primary-hover semantic color"
       },
-      "warning-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -705,7 +705,7 @@
       }
     },
     "info": {
-      "info-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -715,7 +715,7 @@
         "$value": "{blue.600}",
         "$description": "text/info-primary semantic color"
       },
-      "info-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -725,7 +725,7 @@
         "$value": "{blue.400}",
         "$description": "text/info-secondary semantic color"
       },
-      "info-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -735,7 +735,7 @@
         "$value": "{blue.700}",
         "$description": "text/info-primary-hover semantic color"
       },
-      "info-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -747,7 +747,7 @@
       }
     },
     "offer": {
-      "offer-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -757,7 +757,7 @@
         "$value": "{green.600}",
         "$description": "text/offer-primary semantic color"
       },
-      "offer-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -767,7 +767,7 @@
         "$value": "{green.500}",
         "$description": "text/offer-secondary semantic color"
       },
-      "offer-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -777,7 +777,7 @@
         "$value": "{green.700}",
         "$description": "text/offer-primary-hover semantic color"
       },
-      "offer-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -853,7 +853,7 @@
       }
     },
     "disabled": {
-      "disabled": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -863,7 +863,7 @@
         "$value": "{slate.400}",
         "$description": "icon/disabled semantic color"
       },
-      "disabled-alt": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -892,7 +892,7 @@
           ]
         },
         "$type": "color",
-        "$value": "{b&w.white}",
+        "$value": "{bw.white}",
         "$description": "icon/white semantic color"
       },
       "on-dark-color": {
@@ -902,12 +902,12 @@
           ]
         },
         "$type": "color",
-        "$value": "{b&w.white}",
+        "$value": "{bw.white}",
         "$description": "icon/on-dark-color semantic color"
       }
     },
     "brand": {
-      "brand-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -917,7 +917,7 @@
         "$value": "{brand.500}",
         "$description": "icon/accent-primary semantic color"
       },
-      "brand-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -927,7 +927,7 @@
         "$value": "{brand.300}",
         "$description": "icon/accent-secondary semantic color"
       },
-      "brand-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -937,7 +937,7 @@
         "$value": "{brand.600}",
         "$description": "icon/accent-primary-hover semantic color"
       },
-      "brand-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -949,7 +949,7 @@
       }
     },
     "error": {
-      "error-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -959,7 +959,7 @@
         "$value": "{red.600}",
         "$description": "icon/error-primary semantic color"
       },
-      "error-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -969,7 +969,7 @@
         "$value": "{red.300}",
         "$description": "icon/error-secondary semantic color"
       },
-      "error-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -979,7 +979,7 @@
         "$value": "{red.600}",
         "$description": "icon/error-primary-hover semantic color"
       },
-      "error-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -991,7 +991,7 @@
       }
     },
     "success": {
-      "success-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1001,7 +1001,7 @@
         "$value": "{green.600}",
         "$description": "icon/success-primary semantic color"
       },
-      "success-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1011,7 +1011,7 @@
         "$value": "{green.200}",
         "$description": "icon/success-secondary semantic color"
       },
-      "success-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1021,7 +1021,7 @@
         "$value": "{green.700}",
         "$description": "icon/success-primary-hover semantic color"
       },
-      "success-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1033,7 +1033,7 @@
       }
     },
     "warning": {
-      "warning-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1043,7 +1043,7 @@
         "$value": "{amber.600}",
         "$description": "icon/warning-primary semantic color"
       },
-      "warning-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1053,7 +1053,7 @@
         "$value": "{amber.400}",
         "$description": "icon/warning-secondary semantic color"
       },
-      "warning-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1063,7 +1063,7 @@
         "$value": "{amber.700}",
         "$description": "icon/warning-primary-hover semantic color"
       },
-      "warning-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1075,7 +1075,7 @@
       }
     },
     "info": {
-      "info-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1085,7 +1085,7 @@
         "$value": "{blue.600}",
         "$description": "icon/info-primary semantic color"
       },
-      "info-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1095,7 +1095,7 @@
         "$value": "{blue.400}",
         "$description": "icon/info-secondary semantic color"
       },
-      "info-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1105,7 +1105,7 @@
         "$value": "{blue.700}",
         "$description": "icon/info-primary-hover semantic color"
       },
-      "info-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1117,7 +1117,7 @@
       }
     },
     "offer": {
-      "offer-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1127,7 +1127,7 @@
         "$value": "{green.600}",
         "$description": "icon/offer-primary semantic color"
       },
-      "offer-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1137,7 +1137,7 @@
         "$value": "{green.400}",
         "$description": "icon/offer-secondary semantic color"
       },
-      "offer-primary-hover": {
+      "primary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1147,7 +1147,7 @@
         "$value": "{green.700}",
         "$description": "icon/offer-primary-hover semantic color"
       },
-      "offer-secondary-hover": {
+      "secondary-hover": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1203,7 +1203,7 @@
       }
     },
     "disabled": {
-      "disabled": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1213,7 +1213,7 @@
         "$value": "{slate.300}",
         "$description": "border/disabled semantic color"
       },
-      "disabled-alt": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1225,7 +1225,7 @@
       }
     },
     "brand": {
-      "brand-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1235,7 +1235,7 @@
         "$value": "{brand.500}",
         "$description": "border/accent-primary semantic color"
       },
-      "brand-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1247,7 +1247,7 @@
       }
     },
     "error": {
-      "error-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1257,7 +1257,7 @@
         "$value": "{red.500}",
         "$description": "border/error-primary semantic color"
       },
-      "error-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1269,7 +1269,7 @@
       }
     },
     "success": {
-      "success-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1279,7 +1279,7 @@
         "$value": "{green.500}",
         "$description": "border/success-primary semantic color"
       },
-      "success-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1291,7 +1291,7 @@
       }
     },
     "warning": {
-      "warning-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1301,7 +1301,7 @@
         "$value": "{amber.500}",
         "$description": "border/warning-primary semantic color"
       },
-      "warning-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1313,7 +1313,7 @@
       }
     },
     "info": {
-      "info-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1323,7 +1323,7 @@
         "$value": "{blue.500}",
         "$description": "border/info-primary semantic color"
       },
-      "info-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1335,7 +1335,7 @@
       }
     },
     "offer": {
-      "offer-primary": {
+      "primary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
@@ -1345,7 +1345,7 @@
         "$value": "{green.500}",
         "$description": "border/offer-primary semantic color"
       },
-      "offer-secondary": {
+      "secondary": {
         "$extensions": {
           "com.figma.scopes": [
             "ALL_SCOPES"
