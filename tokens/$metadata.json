@@ -1,0 +1,10 @@
+{
+  "tokenSetOrder": [
+    "Color Primitives/Default",
+    "Color/Light",
+    "Color/Dark",
+    "Typography/Default",
+    "Typography Primitives/Mode 1",
+    "Size/Default"
+  ]
+}
