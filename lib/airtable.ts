@@ -1,7 +1,7 @@
 import Airtable from 'airtable';
 import { Resource, AirtableAttachment } from '@/types/resource';
 
-const AIRTABLE_TIMEOUT_MS = 15_000;
+const AIRTABLE_TIMEOUT_MS = 10_000;
 const CONFIG_ERROR_MESSAGE =
   'Airtable configuration missing. Set AIRTABLE_API_KEY and AIRTABLE_BASE_ID environment variables.';
 

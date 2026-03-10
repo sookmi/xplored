@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { getResources, getCategories, searchResources } from '@/lib/airtable';
 import ResourceGrid from '@/components/ResourceGrid';
+import ResourceLoadError from '@/components/ResourceLoadError';
 import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 
@@ -11,17 +12,26 @@ interface HomePageProps {
 }
 
 async function ResourcesContent({ searchQuery }: { searchQuery?: string }) {
-  const resources = searchQuery
-    ? await searchResources(searchQuery)
-    : await getResources();
-
-  return <ResourceGrid resources={resources} />;
+  try {
+    const resources = searchQuery
+      ? await searchResources(searchQuery)
+      : await getResources();
+    return <ResourceGrid resources={resources} />;
+  } catch {
+    return <ResourceLoadError />;
+  }
 }
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const params = await searchParams;
   const searchQuery = params.q;
-  const categories = await getCategories();
+
+  let categories: string[] = [];
+  try {
+    categories = await getCategories();
+  } catch {
+    // Show page with empty categories so at least the layout loads
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

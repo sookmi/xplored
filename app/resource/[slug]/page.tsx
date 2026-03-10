@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { getResources, getCategories } from '@/lib/airtable';
 import ResourceGrid from '@/components/ResourceGrid';
+import ResourceLoadError from '@/components/ResourceLoadError';
 import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 
@@ -38,13 +39,24 @@ export async function generateMetadata({ params }: CategoryPageProps) {
 }
 
 async function CategoryResources({ categoryName }: { categoryName: string }) {
-  const resources = await getResources(categoryName);
-  return <ResourceGrid resources={resources} />;
+  try {
+    const resources = await getResources(categoryName);
+    return <ResourceGrid resources={resources} />;
+  } catch {
+    return <ResourceLoadError />;
+  }
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
-  const categories = await getCategories();
+
+  let categories: string[] = [];
+  try {
+    categories = await getCategories();
+  } catch {
+    notFound();
+  }
+
   const categoryName = categories.find(c => getCategorySlug(c) === slug);
 
   if (!categoryName) {
