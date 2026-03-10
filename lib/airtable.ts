@@ -1,9 +1,25 @@
 import Airtable from 'airtable';
 import { Resource, AirtableAttachment } from '@/types/resource';
 
-const base = new Airtable({
-  apiKey: process.env.AIRTABLE_API_KEY
-}).base(process.env.AIRTABLE_BASE_ID!);
+const AIRTABLE_TIMEOUT_MS = 15_000;
+const CONFIG_ERROR_MESSAGE =
+  'Airtable configuration missing. Set AIRTABLE_API_KEY and AIRTABLE_BASE_ID environment variables.';
+
+function getBase(): Airtable.Base | null {
+  const apiKey = process.env.AIRTABLE_API_KEY;
+  const baseId = process.env.AIRTABLE_BASE_ID;
+  if (!apiKey || !baseId) return null;
+  return new Airtable({ apiKey }).base(baseId);
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error(`Airtable request timed out after ${ms}ms`)), ms)
+    ),
+  ]);
+}
 
 const TABLE_NAME = 'Resource';
 const INSIGHT_TABLE_NAME = 'Insight';
@@ -81,34 +97,52 @@ function mapInsightRecordToResource(record: InsightAirtableRecord): Resource {
 }
 
 export async function getResources(category?: string): Promise<Resource[]> {
+  const base = getBase();
+  if (!base) return [];
+
   const filterFormula = category && category !== 'All'
     ? `AND({status} = "Published", {category} = "${category}")`
     : '{status} = "Published"';
 
-  const records = await base(TABLE_NAME)
-    .select({
-      filterByFormula: filterFormula,
-      sort: [{ field: 'created_at', direction: 'desc' }],
-    })
-    .all();
+  const records = await withTimeout(
+    base(TABLE_NAME)
+      .select({
+        filterByFormula: filterFormula,
+        sort: [{ field: 'created_at', direction: 'desc' }],
+      })
+      .all(),
+    AIRTABLE_TIMEOUT_MS
+  );
 
   return records.map((record) => mapRecordToResource(record as unknown as AirtableRecord));
 }
 
 export async function getInsights(): Promise<Resource[]> {
-  const records = await base(INSIGHT_TABLE_NAME)
-    .select({
-      filterByFormula: '{status} = "Published"',
-      sort: [{ field: 'created_at', direction: 'desc' }],
-    })
-    .all();
+  const base = getBase();
+  if (!base) return [];
+
+  const records = await withTimeout(
+    base(INSIGHT_TABLE_NAME)
+      .select({
+        filterByFormula: '{status} = "Published"',
+        sort: [{ field: 'created_at', direction: 'desc' }],
+      })
+      .all(),
+    AIRTABLE_TIMEOUT_MS
+  );
 
   return records.map((record) => mapInsightRecordToResource(record as unknown as InsightAirtableRecord));
 }
 
 export async function getResourceById(id: string): Promise<Resource | null> {
+  const base = getBase();
+  if (!base) return null;
+
   try {
-    const record = await base(TABLE_NAME).find(id);
+    const record = await withTimeout(
+      base(TABLE_NAME).find(id),
+      AIRTABLE_TIMEOUT_MS
+    );
     return mapRecordToResource(record as unknown as AirtableRecord);
   } catch {
     return null;
@@ -116,12 +150,18 @@ export async function getResourceById(id: string): Promise<Resource | null> {
 }
 
 export async function getCategories(): Promise<string[]> {
-  const records = await base(TABLE_NAME)
-    .select({
-      filterByFormula: '{status} = "Published"',
-      fields: ['category'],
-    })
-    .all();
+  const base = getBase();
+  if (!base) return [];
+
+  const records = await withTimeout(
+    base(TABLE_NAME)
+      .select({
+        filterByFormula: '{status} = "Published"',
+        fields: ['category'],
+      })
+      .all(),
+    AIRTABLE_TIMEOUT_MS
+  );
 
   const categories = new Set<string>();
   records.forEach((record) => {
@@ -143,14 +183,20 @@ export async function getCategories(): Promise<string[]> {
 }
 
 export async function searchResources(query: string): Promise<Resource[]> {
+  const base = getBase();
+  if (!base) return [];
+
   const searchLower = query.toLowerCase();
 
-  const records = await base(TABLE_NAME)
-    .select({
-      filterByFormula: '{status} = "Published"',
-      sort: [{ field: 'created_at', direction: 'desc' }],
-    })
-    .all();
+  const records = await withTimeout(
+    base(TABLE_NAME)
+      .select({
+        filterByFormula: '{status} = "Published"',
+        sort: [{ field: 'created_at', direction: 'desc' }],
+      })
+      .all(),
+    AIRTABLE_TIMEOUT_MS
+  );
 
   return records
     .filter((record) => {
@@ -169,12 +215,18 @@ export async function searchResources(query: string): Promise<Resource[]> {
 }
 
 export async function getAllTags(): Promise<string[]> {
-  const records = await base(TABLE_NAME)
-    .select({
-      filterByFormula: '{status} = "Published"',
-      fields: ['tags'],
-    })
-    .all();
+  const base = getBase();
+  if (!base) return [];
+
+  const records = await withTimeout(
+    base(TABLE_NAME)
+      .select({
+        filterByFormula: '{status} = "Published"',
+        fields: ['tags'],
+      })
+      .all(),
+    AIRTABLE_TIMEOUT_MS
+  );
 
   const tags = new Set<string>();
   records.forEach((record) => {
