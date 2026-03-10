@@ -1,6 +1,6 @@
 # Database Schema: XploreD_Main
 
-## Table: Resources
+## Table: Resource
 **Description**: 
 Core dataset for XploreD card-based UI rendering. 
 Each record represents a curated tool, platform, or production resource tailored for 'Entrepreneurial Designers'.
