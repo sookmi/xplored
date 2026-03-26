@@ -47,35 +47,32 @@ export const AllVariants: Story = {
     };
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
-        <div>
-          <h3 style={{ marginBottom: 20, fontSize: 15, fontWeight: 700 }}>States</h3>
-          <table style={{ borderCollapse: 'collapse' }}>
-            <thead>
-              <tr>
-                <th />
-                {samples.map((s) => (
-                  <th key={s} style={headerStyle}>{s}</th>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+        <table style={{ borderCollapse: 'collapse' }}>
+          <thead>
+            <tr>
+              <th />
+              {samples.map((s) => (
+                <th key={s} style={headerStyle}>{s}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {states.map((state) => (
+              <tr key={state}>
+                <td style={{ ...labelStyle, paddingRight: 12, paddingTop: 6 }}>{state}</td>
+                {samples.map((text) => (
+                  <td key={text} style={{ padding: '4px 8px' }}>
+                    <HeaderMenu state={state}>{text}</HeaderMenu>
+                  </td>
                 ))}
               </tr>
-            </thead>
-            <tbody>
-              {states.map((state) => (
-                <tr key={state}>
-                  <td style={{ ...labelStyle, paddingRight: 12, paddingTop: 6 }}>{state}</td>
-                  {samples.map((text) => (
-                    <td key={text} style={{ padding: '4px 8px' }}>
-                      <HeaderMenu state={state}>{text}</HeaderMenu>
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
 
         <div>
-          <h3 style={{ marginBottom: 20, fontSize: 15, fontWeight: 700 }}>Menu Group</h3>
+          <h3 style={{ marginBottom: 16, fontSize: 15, fontWeight: 700 }}>Header Navigation</h3>
           <div style={{ display: 'flex', gap: 4 }}>
             <HeaderMenu state="Active">Resources</HeaderMenu>
             <HeaderMenu state="Enabled">Insight</HeaderMenu>

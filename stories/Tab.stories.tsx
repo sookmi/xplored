@@ -34,7 +34,7 @@ export const Playground: Story = {
   args: { state: 'Active', children: 'All' },
 };
 
-export const StateMatrix: Story = {
+export const AllVariants: Story = {
   render: () => {
     const states = ['Enabled', 'Hovered', 'Active'] as const;
     const samples = ['Label', '설정', '탭'] as const;

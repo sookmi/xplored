@@ -54,60 +54,6 @@ export const AllVariants: Story = {
     const variants = ['text', 'filled', 'outlined'] as const;
     const colors = ['brand', 'primary', 'secondary', 'neutral'] as const;
     const sizes = ['xxs', 'xs', 'sm', 'md', 'lg'] as const;
-    const labelStyle: React.CSSProperties = {
-      fontSize: 11, color: '#94a3b8', fontFamily: 'monospace', minWidth: 56,
-    };
-    const headerStyle: React.CSSProperties = {
-      fontSize: 11, color: '#64748b', fontFamily: 'monospace', fontWeight: 600, textAlign: 'center',
-    };
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
-        {variants.map((variant) => (
-          <div key={variant}>
-            <h3 style={{ marginBottom: 20, fontSize: 15, fontWeight: 700, textTransform: 'capitalize' }}>
-              {variant}
-            </h3>
-            <table style={{ borderCollapse: 'collapse' }}>
-              <thead>
-                <tr>
-                  <th />
-                  {sizes.map((s) => (
-                    <th key={s} style={{ ...headerStyle, padding: '0 8px 8px' }}>{s}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {colors.map((color) => (
-                  <tr key={color}>
-                    <td style={{ ...labelStyle, paddingRight: 10, paddingTop: 6 }}>{color}</td>
-                    {sizes.map((size) => (
-                      <td key={size} style={{ padding: '4px 8px' }}>
-                        <CommonButton
-                          variant={variant}
-                          color={color}
-                          size={size}
-                        >
-                          레이블
-                        </CommonButton>
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ))}
-      </div>
-    );
-  },
-};
-
-export const StateMatrix: Story = {
-  render: () => {
-    const variants = ['text', 'filled', 'outlined'] as const;
-    const colors = ['brand', 'primary', 'secondary', 'neutral'] as const;
-    const sizes = ['xxs', 'xs', 'sm', 'md', 'lg'] as const;
     const states = ['enabled', 'hovered', 'pressed', 'disabled'] as const;
     const labelStyle: React.CSSProperties = {
       fontSize: 11, color: '#94a3b8', fontFamily: 'monospace', minWidth: 56,
@@ -135,13 +81,16 @@ export const StateMatrix: Story = {
               </thead>
               <tbody>
                 {colors.map((color) =>
-                  states.map((state, si) => (
-                    <tr key={`${color}-${state}`}>
-                      {si === 0 && (
-                        <td rowSpan={states.length} style={{ ...labelStyle, paddingRight: 12, verticalAlign: 'top', paddingTop: 6 }}>
+                  states.map((state, stateIndex) => (
+                    <tr key={`${variant}-${color}-${state}`}>
+                      {stateIndex === 0 ? (
+                        <td
+                          rowSpan={states.length}
+                          style={{ ...labelStyle, paddingRight: 12, verticalAlign: 'top', paddingTop: 6 }}
+                        >
                           {color}
                         </td>
-                      )}
+                      ) : null}
                       <td style={{ ...labelStyle, paddingRight: 10, paddingTop: 6 }}>{state}</td>
                       {sizes.map((size) => (
                         <td key={size} style={{ padding: '4px 8px' }}>

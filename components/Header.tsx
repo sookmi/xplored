@@ -30,12 +30,14 @@ export const Header: React.FC<{ className?: string }> = ({ className }) => {
       brandHref="/"
       items={menuItems}
       activeHref={activeHref}
+      mode="Responsive"
       className={className}
       themeToggle={<ThemeToggle />}
+      showThemeToggleOnMobile={false}
       mobileAction={
         <button
           type="button"
-          className="p-2 rounded-full bg-transparent hover:bg-default-secondary transition-colors"
+          className="inline-flex items-center justify-center rounded-full bg-transparent p-2 transition-colors"
           aria-label="메뉴"
         >
           <Icon name="menu" size={20} color="icon-default-primary" />
