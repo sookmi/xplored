@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { fn } from 'storybook/test';
-import { Tab } from '../components/Tab';
+import { Tab } from '@xplored/ui';
 
 const meta = {
   title: 'Design System/Tab',

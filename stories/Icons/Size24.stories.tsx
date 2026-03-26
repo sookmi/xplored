@@ -1,8 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { Icon, type IconColor } from '../../components/Icon';
-import type { IconSize } from '../../lib/icons';
-import { iconCategories, type IconName } from '../../lib/icons';
+import { Icon, iconCategories, type IconColor, type IconName, type IconSize } from '@xplored/ui';
 
 const colorOptions: IconColor[] = [
   'icon-default-primary',

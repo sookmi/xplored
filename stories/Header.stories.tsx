@@ -1,48 +1,81 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { Header } from '../components/Header';
+import { Icon, NavigationHeader, ThemeToggleButton } from '@xplored/ui';
 
 const meta = {
   title: 'Design System/Header',
-  component: Header,
+  component: NavigationHeader,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    device: {
+    activeHref: {
       control: 'select',
-      options: ['Desktop', 'Tablet', 'Mobile'],
-      description: '디바이스 타입',
-    },
-    activeMenu: {
-      control: 'select',
-      options: ['Resources', 'Insight', 'About'],
-      description: '활성화된 메뉴',
+      options: ['/', '/insight', '/about'],
+      description: '활성화된 메뉴 href',
     },
   },
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof NavigationHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  args: { device: 'Desktop', activeMenu: 'Resources' },
+  args: {
+    brand: 'XploreD',
+    brandHref: '/',
+    activeHref: '/',
+    items: [
+      { label: 'Resources', href: '/' },
+      { label: 'Insight', href: '/insight' },
+      { label: 'About', href: '/about' },
+    ],
+    themeToggle: <ThemeToggleButton mode="light" />,
+    mobileAction: (
+      <button
+        type="button"
+        className="p-2 rounded-full bg-transparent hover:bg-default-secondary transition-colors"
+        aria-label="메뉴"
+      >
+        <Icon name="menu" size={20} color="icon-default-primary" />
+      </button>
+    ),
+  },
 };
 
 export const AllVariants: Story = {
   render: () => {
-    const devices = ['Desktop', 'Tablet', 'Mobile'] as const;
+    const activeHrefs = ['/', '/insight', '/about'] as const;
     const labelStyle: React.CSSProperties = {
       fontSize: 11, color: '#94a3b8', fontFamily: 'monospace', marginBottom: 8,
     };
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-        {devices.map((device) => (
-          <div key={device}>
-            <div style={labelStyle}>{device}</div>
-            <Header device={device} activeMenu="Resources" />
+        {activeHrefs.map((activeHref) => (
+          <div key={activeHref}>
+            <div style={labelStyle}>{activeHref}</div>
+            <NavigationHeader
+              brand="XploreD"
+              brandHref="/"
+              activeHref={activeHref}
+              items={[
+                { label: 'Resources', href: '/' },
+                { label: 'Insight', href: '/insight' },
+                { label: 'About', href: '/about' },
+              ]}
+              themeToggle={<ThemeToggleButton mode="light" />}
+              mobileAction={
+                <button
+                  type="button"
+                  className="p-2 rounded-full bg-transparent hover:bg-default-secondary transition-colors"
+                  aria-label="메뉴"
+                >
+                  <Icon name="menu" size={20} color="icon-default-primary" />
+                </button>
+              }
+            />
           </div>
         ))}
       </div>

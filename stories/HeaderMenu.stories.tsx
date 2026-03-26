@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { fn } from 'storybook/test';
-import { HeaderMenu } from '../components/HeaderMenu';
+import { HeaderMenu } from '@xplored/ui';
 
 const meta = {
   title: 'Design System/HeaderMenu',
