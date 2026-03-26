@@ -500,7 +500,7 @@ export const colors = {
       "primary": "var(--icon-warning-primary)",
       "secondary": "var(--icon-warning-secondary)",
       "primary-hover": "var(--icon-warning-primary-hover)",
-      "secondary-hover": "var(--icon-warning-secondary-hover)"
+      "warning-secondary-hover": "var(--icon-warning-warning-secondary-hover)"
     },
     "info": {
       "primary": "var(--icon-info-primary)",

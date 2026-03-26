@@ -1,6 +1,11 @@
 import { Suspense } from 'react';
-import { notFound } from 'next/navigation';
-import { getResources, getCategories } from '@/lib/airtable';
+import { redirect } from 'next/navigation';
+import {
+  getResources,
+  getCategories,
+  isAirtableConfigError,
+  isAirtableRateLimitError,
+} from '@/lib/content-repo';
 import ResourceGrid from '@/components/ResourceGrid';
 import ResourceLoadError from '@/components/ResourceLoadError';
 import CategoryFilter from '@/components/CategoryFilter';
@@ -17,7 +22,12 @@ function getCategorySlug(category: string): string {
 }
 
 export async function generateStaticParams() {
-  const categories = await getCategories();
+  let categories: string[] = [];
+  try {
+    categories = await getCategories();
+  } catch {
+    return [];
+  }
   return categories.map((category) => ({
     slug: getCategorySlug(category),
   }));
@@ -25,7 +35,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: CategoryPageProps) {
   const { slug } = await params;
-  const categories = await getCategories();
+  let categories: string[] = [];
+  try {
+    categories = await getCategories();
+  } catch {
+    return { title: 'Resources - XploreD' };
+  }
   const categoryName = categories.find(c => getCategorySlug(c) === slug);
 
   if (!categoryName) {
@@ -42,8 +57,15 @@ async function CategoryResources({ categoryName }: { categoryName: string }) {
   try {
     const resources = await getResources(categoryName);
     return <ResourceGrid resources={resources} />;
-  } catch {
-    return <ResourceLoadError />;
+  } catch (error) {
+    const reason = isAirtableConfigError(error)
+      ? 'config'
+      : isAirtableRateLimitError(error)
+        ? 'rate_limit'
+        : 'request';
+    return (
+      <ResourceLoadError reason={reason} />
+    );
   }
 }
 
@@ -54,13 +76,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   try {
     categories = await getCategories();
   } catch {
-    notFound();
+    redirect('/');
   }
 
   const categoryName = categories.find(c => getCategorySlug(c) === slug);
 
   if (!categoryName) {
-    notFound();
+    redirect('/');
   }
 
   return (

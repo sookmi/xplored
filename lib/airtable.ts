@@ -5,11 +5,43 @@ const AIRTABLE_TIMEOUT_MS = 10_000;
 const CONFIG_ERROR_MESSAGE =
   'Airtable configuration missing. Set AIRTABLE_API_KEY and AIRTABLE_BASE_ID environment variables.';
 
-function getBase(): Airtable.Base | null {
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID;
-  if (!apiKey || !baseId) return null;
-  return new Airtable({ apiKey }).base(baseId);
+function getEnvValue(keys: string[]): string | undefined {
+  for (const key of keys) {
+    const value = process.env[key];
+    if (value) return value;
+  }
+  return undefined;
+}
+
+export function isAirtableConfigError(error: unknown): boolean {
+  return error instanceof Error && error.message.includes('Airtable configuration missing');
+}
+
+export function isAirtableRateLimitError(error: unknown): boolean {
+  if (error === null || error === undefined) return false;
+  const anyError = error as { statusCode?: number; error?: string; message?: string };
+  const message = typeof anyError.message === 'string' ? anyError.message : '';
+  return (
+    anyError.statusCode === 429 ||
+    anyError.error === 'TOO_MANY_REQUESTS' ||
+    anyError.error === 'PUBLIC_API_BILLING_LIMIT_EXCEEDED' ||
+    message.includes('PUBLIC_API_BILLING_LIMIT_EXCEEDED') ||
+    message.includes('Too Many Requests') ||
+    message.includes('too many requests')
+  );
+}
+
+function getBase(): Airtable.Base {
+  const apiKey = getEnvValue(['AIRTABLE_API_KEY', 'AIRTABLE_TOKEN', 'AIRTABLE_PAT']);
+  const baseId = getEnvValue(['AIRTABLE_BASE_ID', 'AIRTABLE_BASE']);
+  if (!apiKey || !baseId) {
+    throw new Error(CONFIG_ERROR_MESSAGE);
+  }
+  return new Airtable({
+    apiKey,
+    noRetryIfRateLimited: true,
+    requestTimeout: AIRTABLE_TIMEOUT_MS,
+  }).base(baseId);
 }
 
 function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
@@ -21,8 +53,8 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   ]);
 }
 
-const TABLE_NAME = 'Resource';
-const INSIGHT_TABLE_NAME = 'Insight';
+const TABLE_NAME = process.env.AIRTABLE_RESOURCE_TABLE || 'Resource';
+const INSIGHT_TABLE_NAME = process.env.AIRTABLE_INSIGHT_TABLE || 'Insight';
 
 interface AirtableRecord {
   id: string;
@@ -35,7 +67,9 @@ interface AirtableRecord {
     status?: string;
     thumbnail?: AirtableAttachment[];
     tag_line?: string;
+    tagline?: string; // Airtable schema uses "tagline"
     explore_tip?: string;
+    explored_tip?: string; // Airtable schema uses "explored_tip"
     created_at?: string;
     updated_at?: string;
   };
@@ -69,8 +103,8 @@ function mapRecordToResource(record: AirtableRecord): Resource {
     sourceType: fields.source_type || '',
     status: (fields.status as 'Published' | 'Draft') || 'Draft',
     thumbnail: fields.thumbnail?.[0]?.url || null,
-    tag_line: fields.tag_line,
-    explore_tip: fields.explore_tip,
+    tag_line: fields.tag_line || fields.tagline,
+    explore_tip: fields.explore_tip || fields.explored_tip,
     createdAt: fields.created_at || '',
     updatedAt: fields.updated_at || '',
   };
@@ -98,8 +132,6 @@ function mapInsightRecordToResource(record: InsightAirtableRecord): Resource {
 
 export async function getResources(category?: string): Promise<Resource[]> {
   const base = getBase();
-  if (!base) return [];
-
   const filterFormula = category && category !== 'All'
     ? `AND({status} = "Published", {category} = "${category}")`
     : '{status} = "Published"';
@@ -119,8 +151,6 @@ export async function getResources(category?: string): Promise<Resource[]> {
 
 export async function getInsights(): Promise<Resource[]> {
   const base = getBase();
-  if (!base) return [];
-
   const records = await withTimeout(
     base(INSIGHT_TABLE_NAME)
       .select({
@@ -136,23 +166,20 @@ export async function getInsights(): Promise<Resource[]> {
 
 export async function getResourceById(id: string): Promise<Resource | null> {
   const base = getBase();
-  if (!base) return null;
-
   try {
     const record = await withTimeout(
       base(TABLE_NAME).find(id),
       AIRTABLE_TIMEOUT_MS
     );
     return mapRecordToResource(record as unknown as AirtableRecord);
-  } catch {
+  } catch (error) {
+    if (isAirtableConfigError(error)) throw error;
     return null;
   }
 }
 
 export async function getCategories(): Promise<string[]> {
   const base = getBase();
-  if (!base) return [];
-
   const records = await withTimeout(
     base(TABLE_NAME)
       .select({
@@ -184,8 +211,6 @@ export async function getCategories(): Promise<string[]> {
 
 export async function searchResources(query: string): Promise<Resource[]> {
   const base = getBase();
-  if (!base) return [];
-
   const searchLower = query.toLowerCase();
 
   const records = await withTimeout(
@@ -216,8 +241,6 @@ export async function searchResources(query: string): Promise<Resource[]> {
 
 export async function getAllTags(): Promise<string[]> {
   const base = getBase();
-  if (!base) return [];
-
   const records = await withTimeout(
     base(TABLE_NAME)
       .select({
@@ -238,4 +261,3 @@ export async function getAllTags(): Promise<string[]> {
 
   return Array.from(tags).sort();
 }
-

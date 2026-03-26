@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { Resource } from '@/types/resource';
+import { Icon } from './Icon';
 
 interface ResourceCardProps {
   resource: Resource;
@@ -15,15 +17,21 @@ function stripBrackets(tag: string): string {
 }
 
 export default function ResourceCard({ resource }: ResourceCardProps) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => {
+    setImageFailed(false);
+  }, [resource.thumbnail]);
+
   return (
     <a
       href={resource.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-default-primary rounded-xl border border-default-tertiary overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-brand-primary transition-all duration-200"
+      className="group block bg-default-primary rounded-xl border border-default-tertiary overflow-hidden hover:shadow-[var(--shadow-card-hovered)] hover:border-brand-primary transition-all duration-200"
     >
       <div className="aspect-video relative bg-default-tertiary overflow-hidden">
-        {resource.thumbnail ? (
+        {resource.thumbnail && !imageFailed ? (
           <Image
             src={resource.thumbnail}
             alt={resource.title}
@@ -32,6 +40,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="lazy"
             unoptimized={true}
+            onError={() => setImageFailed(true)}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-default-tertiary to-default-secondary">
@@ -47,19 +56,9 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
           <h3 className="font-semibold text-default-primary group-hover:text-brand-primary transition-colors line-clamp-1">
             {resource.title}
           </h3>
-          <svg
-            className="w-4 h-4 text-utility-placeholder group-hover:text-brand-primary flex-shrink-0 mt-1 transition-colors"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
+          <span className="flex-shrink-0 mt-0.5 [&_path]:transition-colors group-hover:[&_path]:stroke-[var(--icon-brand-primary)]">
+            <Icon name="external-link" size={20} color="icon-default-tertiary" />
+          </span>
         </div>
 
 

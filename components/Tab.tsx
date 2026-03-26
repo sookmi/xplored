@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export type TabState = 'Enabled' | 'Hovered' | 'Active';
 
 export interface TabProps {
   state?: TabState;
+  href?: string;
   children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
@@ -19,6 +21,7 @@ const stateStyles: Record<TabState, { bg: string; text: string; fontWeight: numb
 
 export const Tab: React.FC<TabProps> = ({
   state = 'Enabled',
+  href,
   children = 'Label',
   onClick,
   className,
@@ -51,13 +54,29 @@ export const Tab: React.FC<TabProps> = ({
     whiteSpace: 'nowrap',
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (hoverBg) e.currentTarget.style.backgroundColor = hoverBg;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (hoverBg) e.currentTarget.style.backgroundColor = s.bg;
   };
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        role="tab"
+        aria-selected={state === 'Active'}
+        style={style}
+        className={className}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button

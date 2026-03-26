@@ -1,100 +1,69 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { HeaderMenu } from './HeaderMenu';
+import { Icon } from './Icon';
+import ThemeToggle from './ThemeToggle';
 
-export type HeaderDevice = 'Desktop' | 'Tablet' | 'Mobile';
+const menuItems: { label: string; href: string }[] = [
+  { label: 'Resources', href: '/' },
+  { label: 'Insight', href: '/insight' },
+  { label: 'About', href: '/about' },
+];
 
-export interface HeaderProps {
-  device?: HeaderDevice;
-  activeMenu?: string;
-  className?: string;
-}
+export const Header: React.FC<{ className?: string }> = ({ className }) => {
+  const pathname = usePathname();
 
-const MoonIcon: React.FC = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M17.1 12.6A7.5 7.5 0 0 1 7.4 2.9a7.5 7.5 0 1 0 9.7 9.7Z"
-      stroke="var(--icon-default-primary)"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const HamburgerIcon: React.FC = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M3 5h14M3 10h14M3 15h14"
-      stroke="var(--icon-default-primary)"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const menuItems = ['Resources', 'Insight', 'About'];
-
-export const Header: React.FC<HeaderProps> = ({
-  device = 'Desktop',
-  activeMenu = 'Resources',
-  className,
-}) => {
-  const isMobile = device === 'Mobile';
-
-  const containerStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: device === 'Desktop' ? 1280 : device === 'Tablet' ? 768 : 390,
-    height: 64,
-    paddingInline: device === 'Desktop' ? 32 : device === 'Tablet' ? 24 : 16,
-    borderBottom: '1px solid var(--border-default-tertiary)',
-    backdropFilter: isMobile ? undefined : 'blur(6px)',
-    backgroundColor: isMobile ? undefined : 'var(--bg-utility-overlay-alpha-white-primary)',
-    boxSizing: 'border-box',
+  const getActiveMenu = () => {
+    if (pathname === '/') return 'Resources';
+    if (pathname.startsWith('/insight')) return 'Insight';
+    if (pathname.startsWith('/about')) return 'About';
+    if (pathname.startsWith('/resource')) return 'Resources';
+    return 'Resources';
   };
 
-  const logoStyle: React.CSSProperties = {
-    fontSize: 20,
-    lineHeight: '24px',
-    fontWeight: 600,
-    color: 'var(--text-default-primary)',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  };
-
-  const iconButtonStyle: React.CSSProperties = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8,
-    borderRadius: 999,
-    backgroundColor: 'var(--bg-default-secondary)',
-    border: 'none',
-    cursor: 'pointer',
-  };
+  const activeMenu = getActiveMenu();
 
   return (
-    <header style={containerStyle} className={className}>
-      <a href="https://www.xplored.design/" style={logoStyle}>XploreD</a>
+    <header
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between border-b border-default-tertiary backdrop-blur-sm ${className ?? ''}`}
+      style={{ backgroundColor: 'var(--bg-utility-overlay-alpha-white-primary)' }}
+    >
+      <Link
+        href="/"
+        className="text-xl font-semibold text-default-primary no-underline hover:opacity-80 transition-opacity"
+      >
+        XploreD
+      </Link>
 
-      {isMobile ? (
-        <button type="button" style={{ ...iconButtonStyle, background: 'transparent' }} aria-label="Menu">
-          <HamburgerIcon />
+      <nav className="hidden sm:flex items-center gap-1">
+        {menuItems.map((item) => (
+          <HeaderMenu
+            key={item.label}
+            href={item.href}
+            state={item.label === activeMenu ? 'Active' : 'Enabled'}
+          >
+            {item.label}
+          </HeaderMenu>
+        ))}
+        <div className="pl-2">
+          <ThemeToggle />
+        </div>
+      </nav>
+
+      {/* Mobile: 햄버거 + 테마 토글 */}
+      <div className="flex sm:hidden items-center gap-2">
+        <ThemeToggle />
+        <button
+          type="button"
+          className="p-2 rounded-full bg-transparent hover:bg-default-secondary transition-colors"
+          aria-label="메뉴"
+        >
+          <Icon name="menu" size={20} color="icon-default-primary" />
         </button>
-      ) : (
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          {menuItems.map((item) => (
-            <HeaderMenu key={item} state={item === activeMenu ? 'Active' : 'Enabled'}>{item}</HeaderMenu>
-          ))}
-          <div style={{ paddingLeft: 8 }}>
-            <button type="button" style={iconButtonStyle} aria-label="Toggle theme">
-              <MoonIcon />
-            </button>
-          </div>
-        </nav>
-      )}
+      </div>
     </header>
   );
 };

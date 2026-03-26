@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# figma token sync temp
+.figma-variables.json
+
 # vercel
 .vercel
 

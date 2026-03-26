@@ -1,11 +1,17 @@
 import { Suspense } from 'react';
-import { getResources, getCategories, searchResources } from '@/lib/airtable';
+import {
+  getResources,
+  getCategories,
+  searchResources,
+  isAirtableConfigError,
+  isAirtableRateLimitError,
+} from '@/lib/content-repo';
 import ResourceGrid from '@/components/ResourceGrid';
 import ResourceLoadError from '@/components/ResourceLoadError';
 import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 
-export const revalidate = 3600; // ISR: revalidate every hour
+export const revalidate = 3600;
 
 interface HomePageProps {
   searchParams: Promise<{ q?: string }>;
@@ -17,14 +23,21 @@ async function ResourcesContent({ searchQuery }: { searchQuery?: string }) {
       ? await searchResources(searchQuery)
       : await getResources();
     return <ResourceGrid resources={resources} />;
-  } catch {
-    return <ResourceLoadError />;
+  } catch (error) {
+    const reason = isAirtableConfigError(error)
+      ? 'config'
+      : isAirtableRateLimitError(error)
+        ? 'rate_limit'
+        : 'request';
+    return (
+      <ResourceLoadError reason={reason} />
+    );
   }
 }
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const params = await searchParams;
-  const searchQuery = params.q;
+  const searchQuery = params?.q;
 
   let categories: string[] = [];
   try {

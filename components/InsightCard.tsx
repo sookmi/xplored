@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { Resource } from '@/types/resource';
+import { Icon } from './Icon';
 
 interface InsightCardProps {
     resource: Resource;
@@ -9,13 +11,19 @@ interface InsightCardProps {
 }
 
 export default function InsightCard({ resource, onSelect }: InsightCardProps) {
+    const [imageFailed, setImageFailed] = useState(false);
+
+    useEffect(() => {
+        setImageFailed(false);
+    }, [resource.thumbnail]);
+
     return (
         <div
             onClick={onSelect}
-            className="group cursor-pointer bg-default-primary rounded-xl border border-default-tertiary overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/50 hover:border-brand-primary transition-all duration-200"
+            className="group cursor-pointer bg-default-primary rounded-xl border border-default-tertiary overflow-hidden hover:shadow-[var(--shadow-card-hovered)] hover:border-brand-primary transition-all duration-200"
         >
             <div className="aspect-video relative bg-default-tertiary overflow-hidden">
-                {resource.thumbnail ? (
+                {resource.thumbnail && !imageFailed ? (
                     <Image
                         src={resource.thumbnail}
                         alt={resource.title}
@@ -24,6 +32,7 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         loading="lazy"
                         unoptimized={true}
+                        onError={() => setImageFailed(true)}
                     />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-default-tertiary to-default-secondary">
@@ -49,17 +58,10 @@ export default function InsightCard({ resource, onSelect }: InsightCardProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-shrink-0 mt-0.5 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                            className="flex-shrink-0 mt-0.5 p-1 rounded hover:bg-default-secondary transition-colors [&_path]:transition-colors hover:[&_path]:stroke-[var(--icon-brand-primary)]"
                             aria-label="외부 링크"
                         >
-                            <svg
-                                className="w-4 h-4 text-gray-400 dark:text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                            <Icon name="external-link" size={20} color="icon-default-tertiary" />
                         </a>
                     )}
                 </div>

@@ -1,5 +1,7 @@
-import { getInsights } from '@/lib/airtable';
+import { getInsights, isAirtableConfigError, isAirtableRateLimitError } from '@/lib/content-repo';
 import InsightPageClient from '@/components/InsightPageClient';
+import ResourceLoadError from '@/components/ResourceLoadError';
+import type { Resource } from '@/types/resource';
 import type { Metadata } from 'next';
 
 export const revalidate = 3600;
@@ -10,7 +12,17 @@ export const metadata: Metadata = {
 };
 
 export default async function InsightPage() {
-    const insights = await getInsights();
+    let insights: Resource[] = [];
+    let loadErrorReason: 'request' | 'config' | 'rate_limit' | null = null;
+    try {
+        insights = await getInsights();
+    } catch (error) {
+        loadErrorReason = isAirtableConfigError(error)
+            ? 'config'
+            : isAirtableRateLimitError(error)
+                ? 'rate_limit'
+                : 'request';
+    }
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -23,7 +35,11 @@ export default async function InsightPage() {
                 </p>
             </section>
 
-            <InsightPageClient insights={insights} />
+            {loadErrorReason ? (
+                <ResourceLoadError reason={loadErrorReason} />
+            ) : (
+                <InsightPageClient insights={insights} />
+            )}
         </div>
     );
 }

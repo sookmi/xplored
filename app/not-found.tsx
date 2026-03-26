@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { Icon } from '@/components/Icon';
+import { CommonButton } from '@/components/CommonButton';
 
 export default function NotFound() {
   return (
@@ -11,25 +12,16 @@ export default function NotFound() {
         <p className="text-default-secondary mb-8">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
-        <Link
+        <CommonButton
           href="/"
-          className="inline-flex items-center px-6 py-3 bg-default-black-solid text-utility-white rounded-lg font-medium hover:opacity-80 transition-colors"
+          variant="filled"
+          color="brand"
+          size="md"
+          className="mx-auto"
         >
-          <svg
-            className="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
+          <Icon name="arrow-left" size={20} color="icon-utility-white" />
           Back to Home
-        </Link>
+        </CommonButton>
       </div>
     </div>
   );

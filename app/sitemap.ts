@@ -1,9 +1,14 @@
 import { MetadataRoute } from 'next';
-import { getCategories } from '@/lib/airtable';
+import { getCategories } from '@/lib/content-repo';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://xplored.design'; // Replace with your actual domain
-    const categories = await getCategories();
+    let categories: string[] = [];
+    try {
+        categories = await getCategories();
+    } catch {
+        categories = [];
+    }
 
     const categoryUrls = categories.map((category) => {
         const slug = category.toLowerCase().replace(/\s+/g, '-');

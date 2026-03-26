@@ -1,9 +1,17 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { Icon } from './Icon';
+import { CommonButton } from './CommonButton';
 
-export default function ResourceLoadError() {
+interface ResourceLoadErrorProps {
+  reason?: 'request' | 'config' | 'rate_limit';
+}
+
+export default function ResourceLoadError({ reason = 'request' }: ResourceLoadErrorProps) {
   const router = useRouter();
+  const isConfigError = reason === 'config';
+  const isRateLimitError = reason === 'rate_limit';
 
   return (
     <div className="text-center py-16">
@@ -11,37 +19,25 @@ export default function ResourceLoadError() {
         className="w-16 h-16 rounded-full bg-default-secondary flex items-center justify-center mx-auto mb-6"
         aria-hidden
       >
-        <svg
-          className="w-8 h-8 text-default-tertiary"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-          />
-        </svg>
+        <Icon name="alert-triangle" size={24} color="icon-default-tertiary" />
       </div>
       <h3 className="text-lg font-medium text-default-primary mb-1">
-        데이터를 불러올 수 없습니다
+        {isConfigError
+          ? 'Supabase 설정을 확인해 주세요'
+          : isRateLimitError
+            ? 'Supabase 요청 한도에 도달했습니다'
+            : '데이터를 불러올 수 없습니다'}
       </h3>
       <p className="text-default-secondary text-sm mb-6">
-        일시적인 오류가 발생했습니다. 다시 시도해 주세요.
+        {isConfigError
+          ? 'SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY 환경 변수가 필요합니다.'
+          : isRateLimitError
+            ? '현재 프로젝트의 요청 한도를 초과했습니다. 잠시 후 다시 시도해 주세요.'
+          : '일시적인 오류가 발생했습니다. 다시 시도해 주세요.'}
       </p>
-      <button
-        type="button"
-        onClick={() => router.refresh()}
-        className="inline-flex items-center justify-center min-w-[56px] px-[12px] py-2 text-sm font-semibold rounded-lg transition-opacity hover:opacity-90"
-        style={{
-          backgroundColor: 'var(--bg-brand-solid)',
-          color: 'var(--text-utility-on-dark-color)',
-        }}
-      >
+      <CommonButton variant="filled" color="secondary" size="md" onClick={() => router.refresh()}>
         다시 시도
-      </button>
+      </CommonButton>
     </div>
   );
 }

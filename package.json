@@ -3,30 +3,53 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3006",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3006",
+    "serve": "npm run build && next start -p 3006",
     "lint": "next lint",
-    "sync-tokens": "node scripts/sync-tokens.mjs"
+    "sync-content": "node scripts/sync-airtable.mjs",
+    "sync-content:dry": "node scripts/sync-airtable.mjs --dry-run",
+    "migrate-images": "node components/migrate-images.js",
+    "sync-tokens": "node scripts/sync-tokens.mjs",
+    "pull-tokens": "node scripts/pull-figma-tokens.mjs && npm run sync-tokens",
+    "pull-tokens:light": "node scripts/pull-figma-tokens.mjs --mode=light && npm run sync-tokens",
+    "pull-tokens:dark": "node scripts/pull-figma-tokens.mjs --mode=dark && npm run sync-tokens",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.3",
     "airtable": "^0.12.2",
+    "axios": "^1.13.6",
     "next": "14.2.3",
     "next-themes": "^0.4.6",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.1",
     "@playwright/test": "^1.58.1",
+    "@storybook/addon-a11y": "^10.2.15",
+    "@storybook/addon-docs": "^10.2.15",
+    "@storybook/addon-onboarding": "^10.2.15",
+    "@storybook/addon-vitest": "^10.2.15",
+    "@storybook/nextjs-vite": "^10.2.15",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.0.1",
+    "chromatic": "^15.2.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "playwright": "^1.58.1",
     "postcss": "^8",
+    "storybook": "^10.2.15",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
   }
 }

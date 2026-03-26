@@ -343,10 +343,10 @@
   --text-utility-placeholder: #94a3b8;
   --text-utility-white: #ffffff;
   --text-utility-on-dark-color: #ffffff;
-  --text-brand-primary: #10b981;
-  --text-brand-secondary: #6ee7b7;
-  --text-brand-primary-hover: #059669;
-  --text-brand-secondary-hover: #34d399;
+  --text-brand-primary: #059669;
+  --text-brand-secondary: #34d399;
+  --text-brand-primary-hover: #047857;
+  --text-brand-secondary-hover: #10b981;
   --text-error-primary: #dc2626;
   --text-error-secondary: #f87171;
   --text-error-primary-hover: #b91c1c;
@@ -378,13 +378,13 @@
   --icon-utility-placeholder: #94a3b8;
   --icon-utility-white: #ffffff;
   --icon-utility-on-dark-color: #ffffff;
-  --icon-brand-primary: #10b981;
-  --icon-brand-secondary: #6ee7b7;
-  --icon-brand-primary-hover: #059669;
-  --icon-brand-secondary-hover: #34d399;
+  --icon-brand-primary: #059669;
+  --icon-brand-secondary: #34d399;
+  --icon-brand-primary-hover: #047857;
+  --icon-brand-secondary-hover: #10b981;
   --icon-error-primary: #dc2626;
-  --icon-error-secondary: #fca5a5;
-  --icon-error-primary-hover: #dc2626;
+  --icon-error-secondary: #f87171;
+  --icon-error-primary-hover: #b91c1c;
   --icon-error-secondary-hover: #ef4444;
   --icon-success-primary: #16a34a;
   --icon-success-secondary: #bbf7d0;
@@ -393,7 +393,7 @@
   --icon-warning-primary: #d97706;
   --icon-warning-secondary: #fbbf24;
   --icon-warning-primary-hover: #b45309;
-  --icon-warning-secondary-hover: #f59e0b;
+  --icon-warning-warning-secondary-hover: #f59e0b;
   --icon-info-primary: #2563eb;
   --icon-info-secondary: #60a5fa;
   --icon-info-primary-hover: #1d4ed8;
@@ -424,8 +424,8 @@
 
 .dark {
   /* Dark Theme Semantic Colors */
-  --bg-default-primary: #111827;
-  --bg-default-secondary: #1f2937;
+  --bg-default-primary: #030712;
+  --bg-default-secondary: #111827;
   --bg-default-tertiary: #374151;
   --bg-default-quartiary: #4b5563;
   --bg-default-primary-hover: #1f2937;
@@ -473,7 +473,7 @@
   --text-disabled-primary: #6b7280;
   --text-disabled-secondary: #4b5563;
   --text-utility-placeholder: #6b7280;
-  --text-utility-white: #ffffff;
+  --text-utility-white: #0f172a;
   --text-utility-on-dark-color: #ffffff;
   --text-brand-primary: #34d399;
   --text-brand-secondary: #10b981;
@@ -515,7 +515,7 @@
   --icon-brand-primary-hover: #6ee7b7;
   --icon-brand-secondary-hover: #34d399;
   --icon-error-primary: #f87171;
-  --icon-error-secondary: #dc2626;
+  --icon-error-secondary: #ef4444;
   --icon-error-primary-hover: #fca5a5;
   --icon-error-secondary-hover: #f87171;
   --icon-success-primary: #4ade80;
@@ -525,7 +525,7 @@
   --icon-warning-primary: #fbbf24;
   --icon-warning-secondary: #f59e0b;
   --icon-warning-primary-hover: #fcd34d;
-  --icon-warning-secondary-hover: #fbbf24;
+  --icon-warning-warning-secondary-hover: #fbbf24;
   --icon-info-primary: #60a5fa;
   --icon-info-secondary: #3b82f6;
   --icon-info-primary-hover: #93c5fd;
