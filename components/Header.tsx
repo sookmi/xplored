@@ -35,15 +35,7 @@ export const Header: React.FC<{ className?: string }> = ({ className }) => {
       className={resolvedClassName}
       themeToggle={<ThemeToggle />}
       showThemeToggleOnMobile={false}
-      mobileAction={
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-full bg-transparent p-2 transition-colors"
-          aria-label="메뉴"
-        >
-          <Icon name="menu" size={20} color="icon-default-primary" />
-        </button>
-      }
+      mobileAction={<Icon name="menu" size={20} color="icon-default-primary" />}
       LinkComponent={NextLinkAdapter}
     />
   );

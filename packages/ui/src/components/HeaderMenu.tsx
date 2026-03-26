@@ -64,6 +64,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({
     const linkProps = {
       style,
       className,
+      onClick,
       onMouseEnter: handleMouseEnter,
       onMouseLeave: handleMouseLeave,
     } as const;

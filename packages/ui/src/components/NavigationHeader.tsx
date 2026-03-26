@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { HeaderMenu } from './HeaderMenu';
+import { Icon } from './Icon';
 import type { LinkComponent } from '../types';
 
 export interface NavigationHeaderItem {
@@ -21,6 +22,7 @@ export interface NavigationHeaderProps {
   themeToggle?: React.ReactNode;
   showThemeToggleOnMobile?: boolean;
   mobileAction?: React.ReactNode;
+  initialMobileMenuOpen?: boolean;
   LinkComponent?: LinkComponent;
 }
 
@@ -34,12 +36,16 @@ export function NavigationHeader({
   themeToggle,
   showThemeToggleOnMobile = false,
   mobileAction,
+  initialMobileMenuOpen = false,
   LinkComponent,
 }: NavigationHeaderProps) {
+  const rootRef = React.useRef<HTMLElement | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(initialMobileMenuOpen);
   const isDesktop = mode === 'Desktop';
   const isTablet = mode === 'Tablet';
   const isMobile = mode === 'Mobile';
   const isResponsive = mode === 'Responsive';
+  const supportsMobileMenu = isResponsive || isMobile;
 
   const brandClassName =
     'inline-flex items-center text-[20px] leading-6 font-semibold text-default-primary no-underline transition-opacity hover:opacity-80';
@@ -56,48 +62,159 @@ export function NavigationHeader({
     );
 
   const headerBorderColor = 'rgba(148, 163, 184, 0.09)';
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
+  const surfaceStyle: React.CSSProperties = {
+    backgroundColor: 'var(--bg-utility-overlay-alpha-white-primary)',
+    backdropFilter: 'blur(12px)',
+    WebkitBackdropFilter: 'blur(12px)',
+  };
+
+  React.useEffect(() => {
+    if (!supportsMobileMenu) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [supportsMobileMenu]);
+
+  React.useEffect(() => {
+    setIsMobileMenuOpen(initialMobileMenuOpen);
+  }, [initialMobileMenuOpen]);
+
+  React.useEffect(() => {
+    closeMobileMenu();
+  }, [activeHref]);
+
+  React.useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header
+      ref={rootRef}
       className={`w-full border-b ${className ?? ''}`.trim()}
       style={{
         borderColor: headerBorderColor,
-        backgroundColor: 'var(--bg-utility-overlay-alpha-white-primary)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        ...surfaceStyle,
       }}
     >
-      <div
-        className={[
-          'mx-auto flex h-16 w-full items-center justify-between',
-          isResponsive ? 'max-w-[1280px] px-4 sm:px-6 xl:px-8' : '',
-          isDesktop ? 'max-w-[1280px] px-8' : '',
-          isTablet ? 'px-6' : '',
-          isMobile ? 'px-4' : '',
-        ].join(' ').trim()}
-      >
-        {brandNode}
+      <div className="relative">
+        <div
+          className={[
+            'relative z-10 mx-auto flex h-16 w-full items-center justify-between',
+            isResponsive ? 'max-w-[1280px] px-4 sm:px-6 xl:px-8' : '',
+            isDesktop ? 'max-w-[1280px] px-8' : '',
+            isTablet ? 'px-6' : '',
+            isMobile ? 'px-4' : '',
+          ].join(' ').trim()}
+        >
+          {brandNode}
 
-        {(isResponsive || isDesktop || isTablet) ? (
-          <nav className={isResponsive ? 'hidden sm:flex items-center gap-1' : 'flex items-center gap-1'}>
-            {items.map((item) => (
-              <HeaderMenu
-                key={item.label}
-                href={item.href}
-                state={item.href === activeHref ? 'Active' : 'Enabled'}
-                LinkComponent={LinkComponent}
+          {(isResponsive || isDesktop || isTablet) ? (
+            <nav className={isResponsive ? 'hidden sm:flex items-center gap-1' : 'flex items-center gap-1'}>
+              {items.map((item) => (
+                <HeaderMenu
+                  key={item.label}
+                  href={item.href}
+                  state={item.href === activeHref ? 'Active' : 'Enabled'}
+                  LinkComponent={LinkComponent}
+                >
+                  {item.label}
+                </HeaderMenu>
+              ))}
+              {themeToggle ? <div className="pl-2">{themeToggle}</div> : null}
+            </nav>
+          ) : null}
+
+          {(isResponsive || isMobile) ? (
+            <div className={isResponsive ? 'flex sm:hidden items-center gap-2' : 'flex items-center gap-2'}>
+              {showThemeToggleOnMobile ? themeToggle : null}
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-full bg-transparent p-2 transition-colors"
+                aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation-menu"
+                onClick={toggleMobileMenu}
               >
-                {item.label}
-              </HeaderMenu>
-            ))}
-            {themeToggle ? <div className="pl-2">{themeToggle}</div> : null}
-          </nav>
-        ) : null}
+                {isMobileMenuOpen
+                  ? <Icon name="x" size={20} color="icon-default-primary" />
+                  : (mobileAction ?? <Icon name="menu" size={20} color="icon-default-primary" />)}
+              </button>
+            </div>
+          ) : null}
+        </div>
 
-        {(isResponsive || isMobile) ? (
-          <div className={isResponsive ? 'flex sm:hidden items-center gap-2' : 'flex items-center gap-2'}>
-            {showThemeToggleOnMobile ? themeToggle : null}
-            {mobileAction}
+        {supportsMobileMenu && isMobileMenuOpen ? (
+          <div
+            id="mobile-navigation-menu"
+            className={isResponsive ? 'absolute inset-x-0 top-full z-0 sm:hidden' : 'absolute inset-x-0 top-full z-0'}
+            style={{
+              ...surfaceStyle,
+            }}
+            onClick={closeMobileMenu}
+          >
+            <div className="mx-auto flex h-[calc(100dvh-64px)] w-full max-w-[1280px] flex-col justify-between px-4 pb-4 pt-4">
+              <nav className="flex flex-col items-stretch gap-1" onClick={(event) => event.stopPropagation()}>
+                {items.map((item) => {
+                  const itemClassName =
+                    'block rounded-2xl px-4 py-4 text-[16px] font-semibold leading-6 no-underline transition-colors';
+                  const itemStyle: React.CSSProperties = {
+                    color:
+                      item.href === activeHref
+                        ? 'var(--text-default-primary)'
+                        : 'var(--text-default-tertiary)',
+                  };
+
+                  if (LinkComponent && item.href.startsWith('/')) {
+                    return (
+                      <LinkComponent
+                        key={item.label}
+                        href={item.href}
+                        className={itemClassName}
+                        style={itemStyle}
+                        onClick={closeMobileMenu}
+                      >
+                        {item.label}
+                      </LinkComponent>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className={itemClassName}
+                      style={itemStyle}
+                      onClick={closeMobileMenu}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+              </nav>
+
+              {themeToggle ? (
+                <div className="flex w-full justify-end" onClick={(event) => event.stopPropagation()}>
+                  <div>{themeToggle}</div>
+                </div>
+              ) : null}
+            </div>
           </div>
         ) : null}
       </div>
