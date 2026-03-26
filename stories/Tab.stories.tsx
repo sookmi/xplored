@@ -23,7 +23,7 @@ const meta = {
   },
   args: {
     onClick: fn(),
-    children: 'Label',
+    children: 'All',
   },
 } satisfies Meta<typeof Tab>;
 
@@ -31,10 +31,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  args: { state: 'Enabled', children: 'Label' },
+  args: { state: 'Active', children: 'All' },
 };
 
-export const AllVariants: Story = {
+export const StateMatrix: Story = {
   render: () => {
     const states = ['Enabled', 'Hovered', 'Active'] as const;
     const samples = ['Label', '설정', '탭'] as const;
@@ -72,16 +72,6 @@ export const AllVariants: Story = {
               ))}
             </tbody>
           </table>
-        </div>
-
-        <div>
-          <h3 style={{ marginBottom: 20, fontSize: 15, fontWeight: 700 }}>Tab Group</h3>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <Tab state="Active">전체</Tab>
-            <Tab state="Enabled">인기</Tab>
-            <Tab state="Enabled">최신</Tab>
-            <Tab state="Enabled">추천</Tab>
-          </div>
         </div>
       </div>
     );

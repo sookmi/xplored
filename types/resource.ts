@@ -2,7 +2,7 @@ export interface Resource {
   id: string;
   title: string;
   url: string;
-  category: 'Design System' | 'References' | 'Platforms' | string;
+  category: 'Design System' | 'References' | 'AI' | 'Assets' | 'Platforms' | 'Production' | string;
   tags: string[];
   sourceType: string;
   status: 'Published' | 'Draft';
@@ -34,4 +34,11 @@ export interface AirtableAttachment {
   };
 }
 
-export type Category = 'Design System' | 'References' | 'Platforms' | 'All';
+export type Category =
+  | 'Design System'
+  | 'References'
+  | 'AI'
+  | 'Assets'
+  | 'Platforms'
+  | 'Production'
+  | 'All';

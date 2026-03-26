@@ -1,8 +1,7 @@
 import { cache } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { areSameCategory, compareCategories, formatCategoryLabel, getCategorySlug } from '@/lib/categories';
 import type { Resource } from '@/types/resource';
-
-const CATEGORY_ORDER = ['References', 'AI', 'Assets', 'Platforms', 'Production'];
 const SUPABASE_TIMEOUT_MS = 10_000;
 const SUPABASE_CONFIG_ERROR_MESSAGE =
   'Supabase configuration missing. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (or SUPABASE_ANON_KEY).';
@@ -302,8 +301,8 @@ export function isAirtableRateLimitError(error: unknown): boolean {
 
 export async function getResources(category?: string): Promise<Resource[]> {
   const resources = await getPublishedResources();
-  if (!category || category === 'All') return resources;
-  return resources.filter((resource) => resource.category === category);
+  if (!category || areSameCategory(category, 'All')) return resources;
+  return resources.filter((resource) => resource.category && areSameCategory(resource.category, category));
 }
 
 export async function getInsights(): Promise<Resource[]> {
@@ -317,20 +316,21 @@ export async function getResourceById(id: string): Promise<Resource | null> {
 
 export async function getCategories(): Promise<string[]> {
   const resources = await getPublishedResources();
-  const categories = new Set<string>();
+  const categories = new Map<string, string>();
 
   resources.forEach((resource) => {
-    if (resource.category) categories.add(resource.category);
+    if (!resource.category) return;
+
+    const label = formatCategoryLabel(resource.category);
+    if (!label) return;
+
+    const slug = getCategorySlug(label);
+    if (!categories.has(slug)) {
+      categories.set(slug, label);
+    }
   });
 
-  return Array.from(categories).sort((a, b) => {
-    const indexA = CATEGORY_ORDER.indexOf(a);
-    const indexB = CATEGORY_ORDER.indexOf(b);
-    if (indexA === -1 && indexB === -1) return a.localeCompare(b);
-    if (indexA === -1) return 1;
-    if (indexB === -1) return -1;
-    return indexA - indexB;
-  });
+  return Array.from(categories.values()).sort(compareCategories);
 }
 
 export async function searchResources(query: string): Promise<Resource[]> {

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
+import { getCategorySlug } from '@/lib/categories';
 import {
   getResources,
   getCategories,
@@ -15,10 +16,6 @@ export const revalidate = 3600;
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
-}
-
-function getCategorySlug(category: string): string {
-  return category.toLowerCase().replace(/\s+/g, '-');
 }
 
 export async function generateStaticParams() {
