@@ -15,6 +15,7 @@ const menuItems: { label: string; href: string }[] = [
 
 export const Header: React.FC<{ className?: string }> = ({ className }) => {
   const pathname = usePathname();
+  const resolvedClassName = ['fixed inset-x-0 top-0 z-50', className].filter(Boolean).join(' ');
 
   const activeHref = (() => {
     if (pathname === '/') return '/';
@@ -31,7 +32,7 @@ export const Header: React.FC<{ className?: string }> = ({ className }) => {
       items={menuItems}
       activeHref={activeHref}
       mode="Responsive"
-      className={className}
+      className={resolvedClassName}
       themeToggle={<ThemeToggle />}
       showThemeToggleOnMobile={false}
       mobileAction={

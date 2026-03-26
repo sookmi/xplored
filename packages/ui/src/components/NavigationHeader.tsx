@@ -55,10 +55,13 @@ export function NavigationHeader({
       </a>
     );
 
+  const headerBorderColor = 'rgba(148, 163, 184, 0.09)';
+
   return (
     <header
-      className={`w-full border-b border-default-tertiary ${className ?? ''}`.trim()}
+      className={`w-full border-b ${className ?? ''}`.trim()}
       style={{
+        borderColor: headerBorderColor,
         backgroundColor: 'var(--bg-utility-overlay-alpha-white-primary)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
