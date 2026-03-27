@@ -64,11 +64,17 @@ export function NavigationHeader({
   const headerBorderColor = 'rgba(148, 163, 184, 0.09)';
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
   const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
-  const surfaceStyle: React.CSSProperties = {
+  const defaultSurfaceStyle: React.CSSProperties = {
     backgroundColor: 'var(--bg-utility-overlay-alpha-white-primary)',
     backdropFilter: 'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
   };
+  const mobileOpenSurfaceStyle: React.CSSProperties = {
+    backgroundColor: 'var(--bg-default-primary)',
+    backdropFilter: 'blur(6px)',
+    WebkitBackdropFilter: 'blur(6px)',
+  };
+  const headerSurfaceStyle = isMobileMenuOpen && supportsMobileMenu ? mobileOpenSurfaceStyle : defaultSurfaceStyle;
 
   React.useEffect(() => {
     if (!supportsMobileMenu) {
@@ -110,7 +116,7 @@ export function NavigationHeader({
       className={`w-full border-b ${className ?? ''}`.trim()}
       style={{
         borderColor: headerBorderColor,
-        ...surfaceStyle,
+        ...headerSurfaceStyle,
       }}
     >
       <div className="relative">
@@ -165,7 +171,7 @@ export function NavigationHeader({
             id="mobile-navigation-menu"
             className={isResponsive ? 'absolute inset-x-0 top-full z-0 sm:hidden' : 'absolute inset-x-0 top-full z-0'}
             style={{
-              ...surfaceStyle,
+              ...mobileOpenSurfaceStyle,
             }}
             onClick={closeMobileMenu}
           >
@@ -210,8 +216,8 @@ export function NavigationHeader({
               </nav>
 
               {themeToggle ? (
-                <div className="flex w-full justify-end" onClick={(event) => event.stopPropagation()}>
-                  <div>{themeToggle}</div>
+                <div className="flex w-full justify-end py-2" onClick={(event) => event.stopPropagation()}>
+                  <div className="[&>button]:p-3">{themeToggle}</div>
                 </div>
               ) : null}
             </div>

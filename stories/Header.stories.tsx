@@ -166,11 +166,11 @@ export const AllVariants: Story = {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
         {variants.map((variant) => (
-          <div key={variant.label}>
+          <div key={variant.label} style={{ minHeight: variant.initialMobileMenuOpen ? 760 : undefined }}>
             <div style={{ fontSize: 11, color: '#94a3b8', fontFamily: 'monospace', marginBottom: 8 }}>
               {variant.label}
             </div>
-            <HeaderFrame width={variant.width}>
+            <HeaderFrame width={variant.width} allowOverflow={variant.mode === 'Mobile'}>
               <NavigationHeader
                 {...args}
                 activeHref={variant.activeHref}
