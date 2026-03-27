@@ -14,6 +14,10 @@ const meta = {
   component: NavigationHeader,
   parameters: {
     layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: '여기에_헤더_피그마_주소_입력',
+    },
   },
   tags: ['autodocs'],
   argTypes: {
