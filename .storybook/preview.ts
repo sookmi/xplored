@@ -21,7 +21,13 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Foundation', ['Color', 'Typography', 'Spacing', 'Radius', 'Effect'], 'Design System'],
+        order: [
+          'Foundation',
+          ['Color', 'Typography', 'Spacing', 'Radius', 'Effect', 'Breakpoint'],
+          'Icons',
+          'Design System',
+          ['CommonButton', 'Tab', 'HeaderMenu', 'Header'],
+        ],
       },
     },
     controls: {

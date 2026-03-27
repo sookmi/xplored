@@ -1,0 +1,59 @@
+---
+description: Figma 토큰 동기화 워크플로우 - 사용자가 토큰 동기화, 토큰 pull, 피그마 변수 동기화 등을 요청할 때 적용
+alwaysApply: false
+---
+
+# Figma Token Sync Workflow
+
+사용자가 "토큰 동기화해줘" 등의 요청을 하면 아래 단계를 순서대로 실행합니다.
+
+## 파일 구조
+
+- `tokens/Color Primitives/Default.json` — 원시 색상 (W3C DTCG 형식)
+- `tokens/Color/Light.json` — 시맨틱 색상 (Light 테마), 값은 `{primitive.step}` 참조
+- `tokens/Color/Dark.json` — 시맨틱 색상 (Dark 테마)
+- `scripts/sync-tokens.mjs` — JSON → CSS/TS 변환
+- `scripts/pull-figma-tokens.mjs` — Figma MCP 출력 → JSON 변환
+- `lib/tokens.css` — 생성된 CSS 변수 (편집 금지)
+- `lib/tokens.ts` — 생성된 Tailwind 맵 (편집 금지)
+
+## 동기화 단계
+
+### 1. Figma 변수 읽기
+
+```
+CallMcpTool: user-figma-desktop / get_variable_defs
+arguments: { "nodeId": "<사용자가 지정한 노드 또는 현재 선택>" }
+```
+
+피그마 데스크톱 앱이 열려 있어야 하며, 해당 파일에서 노드가 선택된 상태여야 합니다.
+
+### 2. 토큰 JSON 업데이트
+
+`get_variable_defs` 출력을 `.figma-variables.json` 파일로 저장합니다.
+출력 형식 예시: `{"bg/default/primary": "#ffffff", "slate/50": "#f8fafc"}`
+
+### 3. pull-tokens 실행
+
+```bash
+npm run pull-tokens          # Light 모드 (기본값)
+npm run pull-tokens:dark     # Dark 모드
+```
+
+- 피그마에서 Light 모드 변수를 읽었으면 `pull-tokens` (또는 `pull-tokens:light`)
+- Dark 모드 변수를 읽었으면 `pull-tokens:dark`
+- 이 명령어는 JSON 업데이트 + CSS/TS 생성을 자동으로 실행합니다
+
+### 4. 변경 확인 및 커밋
+
+```bash
+git diff lib/tokens.css lib/tokens.ts tokens/
+git add tokens/ lib/tokens.css lib/tokens.ts
+git commit -m "chore(tokens): sync design tokens from Figma"
+git push
+```
+
+## 커밋 메시지 컨벤션
+
+- `chore(tokens): sync design tokens from Figma` — 일반 동기화
+- `chore(tokens): update [category] tokens` — 특정 카테고리 변경 시

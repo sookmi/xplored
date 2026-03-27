@@ -5,4 +5,5 @@ export * from './components/CommonButton';
 export * from './components/Tab';
 export * from './components/HeaderMenu';
 export * from './components/ThemeToggleButton';
+export * from './components/ThemeToggle';
 export * from './components/NavigationHeader';

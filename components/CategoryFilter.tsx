@@ -1,8 +1,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { Tab } from '@xplored/ui';
 import { getCategorySlug } from '@/lib/categories';
-import { Tab } from './Tab';
+import { NextLinkAdapter } from './NextLinkAdapter';
 
 interface CategoryFilterProps {
   categories: string[];
@@ -21,6 +22,7 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
       <Tab
         href="/"
         state={isAllActive ? 'Active' : 'Enabled'}
+        LinkComponent={NextLinkAdapter}
       >
         All
       </Tab>
@@ -34,6 +36,7 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
             key={category}
             href={href}
             state={isActive ? 'Active' : 'Enabled'}
+            LinkComponent={NextLinkAdapter}
           >
             {category}
           </Tab>

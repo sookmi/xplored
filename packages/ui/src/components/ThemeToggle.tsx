@@ -1,10 +1,10 @@
 'use client';
 
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { ThemeToggleButton } from '@xplored/ui';
+import { useTheme } from 'next-themes';
+import { ThemeToggleButton } from './ThemeToggleButton';
 
-export default function ThemeToggle() {
+export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

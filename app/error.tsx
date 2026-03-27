@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Icon } from '@/components/Icon';
-import { CommonButton } from '@/components/CommonButton';
+import { CommonButton, Icon } from '@xplored/ui';
+import { NextLinkAdapter } from '@/components/NextLinkAdapter';
 
 export default function Error({
   error,
@@ -51,6 +51,7 @@ export default function Error({
             variant="outlined"
             color="secondary"
             size="md"
+            LinkComponent={NextLinkAdapter}
           >
             홈으로 돌아가기
           </CommonButton>

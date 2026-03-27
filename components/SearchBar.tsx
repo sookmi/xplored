@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Icon } from './Icon';
+import { Icon } from '@xplored/ui';
 
 export default function SearchBar() {
   const router = useRouter();

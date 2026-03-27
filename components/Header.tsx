@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { NavigationHeader } from '@xplored/ui';
-import { Icon } from './Icon';
-import ThemeToggle from './ThemeToggle';
+import { Icon, NavigationHeader, ThemeToggle } from '@xplored/ui';
 import { NextLinkAdapter } from './NextLinkAdapter';
 
 const menuItems: { label: string; href: string }[] = [

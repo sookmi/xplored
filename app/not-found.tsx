@@ -1,5 +1,5 @@
-import { Icon } from '@/components/Icon';
-import { CommonButton } from '@/components/CommonButton';
+import { CommonButton, Icon } from '@xplored/ui';
+import { NextLinkAdapter } from '@/components/NextLinkAdapter';
 
 export default function NotFound() {
   return (
@@ -17,6 +17,7 @@ export default function NotFound() {
           variant="filled"
           color="brand"
           size="md"
+          LinkComponent={NextLinkAdapter}
           className="mx-auto"
         >
           <Icon name="arrow-left" size={20} color="icon-utility-white" />

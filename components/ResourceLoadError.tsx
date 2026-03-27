@@ -1,8 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Icon } from './Icon';
-import { CommonButton } from './CommonButton';
+import { CommonButton, Icon } from '@xplored/ui';
 
 interface ResourceLoadErrorProps {
   reason?: 'request' | 'config' | 'rate_limit';

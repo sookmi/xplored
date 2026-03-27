@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { Icon } from '@xplored/ui';
 import { Resource } from '@/types/resource';
-import { Icon } from './Icon';
 
 interface ResourceCardProps {
   resource: Resource;

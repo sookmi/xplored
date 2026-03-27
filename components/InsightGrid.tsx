@@ -1,4 +1,5 @@
 import { Resource } from '@/types/resource';
+import { Icon } from '@xplored/ui';
 import InsightCard from './InsightCard';
 import { Icon } from './Icon';
 

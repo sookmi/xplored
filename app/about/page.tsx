@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CommonButton } from '@/components/CommonButton';
+import { CommonButton } from '@xplored/ui';
 
 export const metadata: Metadata = {
   title: 'About',

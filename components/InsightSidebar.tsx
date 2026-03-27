@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { Resource } from '@/types/resource';
-import { Icon } from './Icon';
+import { Icon } from '@xplored/ui';
 
 interface InsightSidebarProps {
     insight: Resource | null;
