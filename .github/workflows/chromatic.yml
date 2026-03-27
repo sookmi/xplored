@@ -17,7 +17,8 @@ jobs:
   chromatic:
     name: Publish Storybook to Chromatic
     runs-on: ubuntu-latest
-    if: ${{ secrets.CHROMATIC_PROJECT_TOKEN != '' }}
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,7 +35,8 @@ jobs:
         run: npm ci
 
       - name: Publish to Chromatic
+        if: ${{ env.CHROMATIC_PROJECT_TOKEN != '' }}
         uses: chromaui/action@latest
         with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ env.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
